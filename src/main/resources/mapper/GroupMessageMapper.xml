@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gdut.mapper.GroupMessageMapper">
+
+    <select id="batchSelectUnreadCount" resultType="com.gdut.domain.vo.chat.GroupUnreadCountVO">
+        SELECT group_id as groupId, COUNT(*) as count
+        FROM group_message
+        WHERE 
+        <foreach collection="items" item="item" separator="OR" open="(" close=")">
+            (group_id = #{item.groupId} AND id > #{item.lastReadMsgId})
+        </foreach>
+        GROUP BY group_id
+    </select>
+
+</mapper>

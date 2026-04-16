@@ -1,0 +1,116 @@
+
+# Spring 配置
+spring:
+  application:
+    name: Find_the_lost
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  # 邮件服务配置
+  mail:
+    host: ${MAIL_HOST:smtp.qq.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: false
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+  # SpringDoc OpenAPI3配置
+  springdoc:
+    api-docs:
+      enabled: true
+      path: /v3/api-docs
+    swagger-ui:
+      enabled: true
+      path: /swagger-ui.html
+      tags-sorter: alpha
+      operations-sorter: alpha
+
+  # ai配置
+  ai:
+    dashscope:
+      api-key: ${DASHSCOPE_API_KEY}
+      chat:
+        options:
+          model: qwen-plus
+          temperature: 0.7
+          top-p: 0.8
+          max-tokens: 2048
+      embedding:
+        options:
+            model: text-embedding-v3
+            dimensions: 1024
+
+# 多模态AI配置（用于PDF和图片识别）
+multimodal:
+  dashscope:
+    api-key: ${DASHSCOPE_API_KEY}
+    chat:
+      options:
+        model: qwen2.5-vl-72b-instruct
+        temperature: 0.3
+        top-p: 0.8
+        max-tokens: 4096
+
+# Server配置
+server:
+  error:
+    include-message: none           # 不包含错误消息
+    include-stacktrace: never       # 绝不包含堆栈跟踪
+    include-binding-errors: never   # 不包含绑定错误详情
+    include-exception: false        # 不包含异常类名
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    generator:
+      # Long 转 String，防止前端精度丢失（雪花算法 ID 超过 16 位）
+      write-numbers-as-strings: true
+
+# MyBatis-Plus配置
+mybatis-plus:
+  type-aliases-package: com.gdut.domain.po
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      update-strategy: not_empty
+
+# 密码校验的配置
+user:
+  password:
+    min-length: 8
+    max-length: 20
+
+# JWT配置
+jwt:
+  secret: ${JWT_SECRET:FineTheLost2026SecureKeyForJWTTokenGenerationAndValidation}
+  expiration: 7200 # 2小时（秒）
+
+# ALIYUN OSS配置
+aliyun:
+  oss:
+    endpoint: ${ALIYUN_OSS_ENDPOINT}
+    bucketName: ${ALIYUN_OSS_BUCKET}
+    region: ${ALIYUN_OSS_REGION}
