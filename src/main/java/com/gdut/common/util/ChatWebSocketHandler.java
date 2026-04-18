@@ -56,11 +56,43 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     // 存储在线用户的WebSocket Session，key为userId
     private static final Map<Long, WebSocketSession> ONLINE_USERS = new ConcurrentHashMap<>();
     
-    // 存储笔记编辑者信息，key为noteId，value为userId（用于快速判断谁在编辑）
-    private static final Map<Long, Long> NOTE_EDITORS = new ConcurrentHashMap<>();
+    // 存储笔记编辑者信息，key为noteId，value为EditLockInfo（包含userId和最后活动时间）
+    private static final Map<Long, EditLockInfo> NOTE_EDITORS = new ConcurrentHashMap<>();
     
     // 存储笔记的观察者，key为noteId，value为正在查看的用户ID集合
     private static final Map<Long, Set<Long>> NOTE_VIEWERS = new ConcurrentHashMap<>();
+    
+    // 编辑锁超时时间（毫秒），默认10分钟
+    private static final long EDIT_LOCK_TIMEOUT = 10 * 60 * 1000;
+    
+    /**
+     * 编辑锁信息
+     */
+    private static class EditLockInfo {
+        private final Long userId;
+        private volatile long lastActivityTime;
+        
+        public EditLockInfo(Long userId) {
+            this.userId = userId;
+            this.lastActivityTime = System.currentTimeMillis();
+        }
+        
+        public Long getUserId() {
+            return userId;
+        }
+        
+        public long getLastActivityTime() {
+            return lastActivityTime;
+        }
+        
+        public void updateActivityTime() {
+            this.lastActivityTime = System.currentTimeMillis();
+        }
+        
+        public boolean isExpired() {
+            return System.currentTimeMillis() - lastActivityTime > EDIT_LOCK_TIMEOUT;
+        }
+    }
 
     /**
      * WebSocket连接建立成功后调用
@@ -207,9 +239,17 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
             
             // 查找并释放该用户持有的编辑锁（理论上只有一个）
             NOTE_EDITORS.entrySet().removeIf(entry -> {
-                if (entry.getValue().equals(userId)) {
+                if (entry.getValue().getUserId().equals(userId)) {
                     Long noteId = entry.getKey();
                     log.info("用户{}断开连接，自动释放笔记{}的编辑锁", userId, noteId);
+                    
+                    // ✅ 同步清除数据库中的编辑锁
+                    Note updateNote = new Note();
+                    updateNote.setId(noteId);
+                    updateNote.setEditingUserId(null);
+                    updateNote.setEditingLockTime(null);
+                    noteMapper.updateById(updateNote);
+                    
                     notifyLockReleasedWithoutRemove(noteId);
                     return true;
                 }
@@ -262,9 +302,22 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
      * 发送消息到WebSocket会话
      */
     private void sendMessage(WebSocketSession session, Map<String, Object> message) {
+        // 检查session是否有效且打开
+        if (session == null || !session.isOpen()) {
+            log.debug("WebSocket会话已关闭或为空，跳过发送消息");
+            return;
+        }
+        
         try {
             String jsonMessage = objectMapper.writeValueAsString(message);
-            session.sendMessage(new TextMessage(jsonMessage));
+            synchronized (session) {
+                if (session.isOpen()) {
+                    session.sendMessage(new TextMessage(jsonMessage));
+                }
+            }
+        } catch (IllegalStateException e) {
+            // WebSocket端点状态异常（如正在写入时再次写入），忽略该错误
+            log.debug("WebSocket端点状态异常，跳过发送: {}", e.getMessage());
         } catch (IOException e) {
             log.error("发送WebSocket消息失败", e);
         }
@@ -358,9 +411,12 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
      * 处理笔记编辑请求
      */
     private void handleNoteEditRequest(Long userId, Long noteId, WebSocketSession session) {
+        log.info("用户{}请求获取笔记{}的编辑锁", userId, noteId);
+        
         // 1. 查询笔记信息
         Note note = noteMapper.selectById(noteId);
         if (note == null) {
+            log.warn("笔记{}不存在，拒绝编辑请求", noteId);
             sendMessage(session, Map.of(
                 "type", EDIT_LOCK_DENIED.getValue(),
                 "noteId", noteId,
@@ -372,6 +428,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
         
         // 2. PDF笔记不支持编辑
         if (note.getNoteType() == NoteType.PDF) {
+            log.warn("笔记{}是PDF类型，不支持编辑", noteId);
             sendMessage(session, Map.of(
                 "type", EDIT_LOCK_DENIED.getValue(),
                 "noteId", noteId,
@@ -383,31 +440,58 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
         
         // 3. 检查权限：只有作者或有编辑权限的人才能获取编辑锁
         if (!hasEditPermission(userId, note)) {
+            log.warn("用户{}没有权限编辑笔记{}", userId, noteId);
             sendMessage(session, Map.of(
                 "type", EDIT_LOCK_DENIED.getValue(),
                 "noteId", noteId,
                 "success", false,
                 "message", "没有权限编辑该笔记"
             ));
-            log.warn("用户{}尝试编辑笔记{}但无权限", userId, noteId);
             return;
         }
         
         // 4. 检查该笔记是否已被其他人锁定
-        Long currentEditor = NOTE_EDITORS.get(noteId);
+        EditLockInfo lockInfo = NOTE_EDITORS.get(noteId);
         
-        if (currentEditor == null) {
+        // 如果锁已过期，自动释放
+        if (lockInfo != null && lockInfo.isExpired()) {
+            log.info("笔记{}的编辑锁已过期，自动释放", noteId);
+            NOTE_EDITORS.remove(noteId);
+            notifyLockReleasedWithoutRemove(noteId);
+            lockInfo = null;
+        }
+        
+        log.info("笔记{}的当前编辑者：{}", noteId, lockInfo != null ? lockInfo.getUserId() : "无");
+        
+        if (lockInfo == null) {
             // 无人编辑，授予编辑锁
-            NOTE_EDITORS.put(noteId, userId);
+            NOTE_EDITORS.put(noteId, new EditLockInfo(userId));
+            
+            // ✅ 同步更新数据库
+            Note updateNote = new Note();
+            updateNote.setId(noteId);
+            updateNote.setEditingUserId(userId);
+            updateNote.setEditingLockTime(java.time.LocalDateTime.now());
+            noteMapper.updateById(updateNote);
+            
+            log.info("✅ 用户{}成功获得笔记{}的编辑锁", userId, noteId);
             sendMessage(session, Map.of(
                 "type", EDIT_LOCK_GRANTED.getValue(),
                 "noteId", noteId,
                 "success", true,
                 "message", "已获得编辑权限"
             ));
-            log.info("用户{}获得笔记{}的编辑锁", userId, noteId);
-        } else if (currentEditor.equals(userId)) {
-            // 已经是当前用户在编辑
+        } else if (lockInfo.getUserId().equals(userId)) {
+            // ✅ 已经是当前用户在编辑，允许重新获取锁（刷新活动时间）
+            lockInfo.updateActivityTime();
+            
+            // ✅ 同步刷新数据库中的锁时间
+            Note updateNote = new Note();
+            updateNote.setId(noteId);
+            updateNote.setEditingLockTime(java.time.LocalDateTime.now());
+            noteMapper.updateById(updateNote);
+            
+            log.info("✅ 用户{}重新获取笔记{}的编辑锁（刷新活动时间）", userId, noteId);
             sendMessage(session, Map.of(
                 "type", EDIT_LOCK_GRANTED.getValue(),
                 "noteId", noteId,
@@ -416,14 +500,14 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
             ));
         } else {
             // 被其他人锁定
+            log.warn("❌ 用户{}请求编辑笔记{}被拒绝，当前编辑者为{}", userId, noteId, lockInfo.getUserId());
             sendMessage(session, Map.of(
                 "type", EDIT_LOCK_DENIED.getValue(),
                 "noteId", noteId,
                 "success", false,
-                "editorId", currentEditor,
+                "editorId", lockInfo.getUserId(),
                 "message", "该笔记正在被其他用户编辑"
             ));
-            log.info("用户{}请求编辑笔记{}被拒绝，当前编辑者为{}", userId, noteId, currentEditor);
         }
     }
     
@@ -452,14 +536,22 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
      * 处理笔记编辑锁释放
      */
     private void handleNoteEditRelease(Long userId, Long noteId) {
-        Long currentEditor = NOTE_EDITORS.get(noteId);
+        EditLockInfo lockInfo = NOTE_EDITORS.get(noteId);
         
-        if (currentEditor != null && currentEditor.equals(userId)) {
+        if (lockInfo != null && lockInfo.getUserId().equals(userId)) {
             NOTE_EDITORS.remove(noteId);
+            
+            // ✅ 同步清除数据库中的编辑锁
+            Note updateNote = new Note();
+            updateNote.setId(noteId);
+            updateNote.setEditingUserId(null);
+            updateNote.setEditingLockTime(null);
+            noteMapper.updateById(updateNote);
+            
             log.info("用户{}释放笔记{}的编辑锁", userId, noteId);
             
             // 通知观察者
-            notifyLockReleased(noteId);
+            notifyLockReleasedWithoutRemove(noteId);
         }
     }
     
@@ -468,11 +560,14 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
      */
     private void handleNoteContentUpdate(Long userId, Long noteId, String content, Integer version) {
         // 验证是否是当前编辑者
-        Long currentEditor = NOTE_EDITORS.get(noteId);
-        if (currentEditor == null || !currentEditor.equals(userId)) {
+        EditLockInfo lockInfo = NOTE_EDITORS.get(noteId);
+        if (lockInfo == null || !lockInfo.getUserId().equals(userId)) {
             log.warn("用户{}尝试更新笔记{}但未持有编辑锁", userId, noteId);
             return;
         }
+        
+        // ✅ 刷新编辑锁的活动时间
+        lockInfo.updateActivityTime();
         
         // 广播给所有查看该笔记的其他用户（除了编辑者自己）
         broadcastNoteUpdate(noteId, userId, content, version);

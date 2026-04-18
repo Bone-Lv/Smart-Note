@@ -3,11 +3,14 @@ package com.gdut.common.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.gdut.common.interceptor.TokenInterceptor;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -24,18 +27,32 @@ public class WebConfig implements WebMvcConfigurer {
     private final TokenInterceptor tokenInterceptor;
 
     /**
-     * 配置消息转换器，确保 Long 类型序列化为 String
+     * 配置全局ObjectMapper，支持Long转String和Java 8日期时间
+     * 这个Bean会被Spring Boot自动配置使用，包括HTTP和WebSocket
      */
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+    @Bean
+    @Primary
+    public ObjectMapper objectMapper() {
         ObjectMapper objectMapper = new ObjectMapper();
+        
+        // Long类型自动序列化为String（防止前端精度丢失）
         SimpleModule simpleModule = new SimpleModule();
         simpleModule.addSerializer(Long.class, ToStringSerializer.instance);
         simpleModule.addSerializer(Long.TYPE, ToStringSerializer.instance);
         objectMapper.registerModule(simpleModule);
+        
+        // 支持Java 8日期时间类型（LocalDateTime等）
+        objectMapper.registerModule(new JavaTimeModule());
+        
+        return objectMapper;
+    }
 
-        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-        converter.setObjectMapper(objectMapper);
+    /**
+     * 配置消息转换器，使用全局ObjectMapper
+     */
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(objectMapper());
         converters.add(converter);
     }
 
