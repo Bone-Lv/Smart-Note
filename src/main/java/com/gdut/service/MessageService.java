@@ -101,4 +101,34 @@ public interface MessageService {
      * 标记群聊所有消息为已读
      */
     void markAllGroupMessagesAsRead(Long userId, Long groupId);
+    
+    /**
+     * 获取群聊成员列表
+     */
+    List<GroupMemberVO> getGroupMembers(Long userId, Long groupId);
+    
+    /**
+     * 重命名群聊（仅群主）
+     */
+    void renameGroup(Long userId, Long groupId, String newName);
+    
+    /**
+     * 转让群主（仅群主）
+     */
+    void transferGroupOwner(Long userId, Long groupId, Long newOwnerId);
+    
+    /**
+     * 设置或取消管理员（仅群主）
+     */
+    void setGroupAdmin(Long userId, Long groupId, Long targetUserId, Boolean isAdmin);
+    
+    /**
+     * 移除群成员（群主或管理员）
+     */
+    void removeGroupMember(Long userId, Long groupId, Long targetUserId);
+    
+    /**
+     * 解散群聊（仅群主）
+     */
+    void disbandGroup(Long userId, Long groupId);
 }

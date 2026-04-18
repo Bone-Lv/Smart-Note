@@ -123,6 +123,9 @@ public class MessageServiceImpl implements MessageService {
                 .map(this::convertToPrivateMessageVO)
                 .collect(Collectors.toList());
         
+        // ✅ 重要：反转列表，使消息从旧到新排列（符合聊天界面习惯）
+        Collections.reverse(voList);
+        
         // 返回专门的游标分页结果
         return CursorPageResult.<PrivateMessageVO>builder()
                 .records(voList)
@@ -301,8 +304,20 @@ public class MessageServiceImpl implements MessageService {
             sessions.add(session);
         }
 
-        // 按最后消息时间排序
+        // 按未读数和时间排序：未读消息优先，再按时间倒序
         sessions.sort((a, b) -> {
+            // 1. 优先按未读数排序（有未读的排在前面）
+            int aUnread = a.getUnreadCount() != null ? a.getUnreadCount() : 0;
+            int bUnread = b.getUnreadCount() != null ? b.getUnreadCount() : 0;
+            
+            if (aUnread > 0 && bUnread == 0) {
+                return -1; // a有未读，b没有，a排前面
+            }
+            if (aUnread == 0 && bUnread > 0) {
+                return 1;  // b有未读，a没有，b排前面
+            }
+            
+            // 2. 如果都有未读或都没有未读，按时间倒序（最新的在前）
             if (a.getLastMessageTime() == null) return 1;
             if (b.getLastMessageTime() == null) return -1;
             return b.getLastMessageTime().compareTo(a.getLastMessageTime());
@@ -321,18 +336,6 @@ public class MessageServiceImpl implements MessageService {
         group.setMemberCount(1); // 初始只有群主
         group.setCreateTime(LocalDateTime.now());
         
-        // 上传群头像
-        if (dto.getAvatar() != null && !dto.getAvatar().isEmpty()) {
-            try {
-                if(!StrUtil.isBlank(dto.getAvatar().getOriginalFilename())){
-                    String avatarUrl = aliyunOSSOperator.upload(dto.getAvatar(), dto.getAvatar().getOriginalFilename());
-                    group.setAvatar(avatarUrl);
-                }
-            } catch (Exception e) {
-                log.error("群头像上传失败", e);
-            }
-        }
-        
         chatGroupMapper.insert(group);
 
         // 2. 添加群主为成员
@@ -342,6 +345,7 @@ public class MessageServiceImpl implements MessageService {
         ownerMember.setRole(2); // 群主
         ownerMember.setJoinTime(LocalDateTime.now());
         ownerMember.setIsRemoved(0);
+        ownerMember.setStatus(1); // ✅ 群主直接通过审核
         chatGroupMemberMapper.insert(ownerMember);
 
         // 3. 添加初始成员
@@ -354,6 +358,7 @@ public class MessageServiceImpl implements MessageService {
                     member.setRole(0); // 普通成员
                     member.setJoinTime(LocalDateTime.now());
                     member.setIsRemoved(0);
+                    member.setStatus(1); // ✅ 邀请的成员直接通过审核
                     chatGroupMemberMapper.insert(member);
                     
                     group.setMemberCount(group.getMemberCount() + 1);
@@ -368,12 +373,13 @@ public class MessageServiceImpl implements MessageService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public GroupMessageVO sendGroupMessage(Long senderId, GroupMessageDTO dto) {
-        // 1. 验证是否是群成员
+        // 1. 验证是否是群成员（且已通过审核）
         ChatGroupMember member = chatGroupMemberMapper.selectOne(
                 new LambdaQueryWrapper<ChatGroupMember>()
                         .eq(ChatGroupMember::getGroupId, dto.getGroupId())
                         .eq(ChatGroupMember::getUserId, senderId)
                         .eq(ChatGroupMember::getIsRemoved, 0)
+                        .eq(ChatGroupMember::getStatus, 1) // 必须是已通过审核的成员
         );
 
         if (member == null) {
@@ -445,6 +451,9 @@ public class MessageServiceImpl implements MessageService {
                 .map(this::convertToGroupMessageVO)
                 .collect(Collectors.toList());
         
+        // ✅ 重要：反转列表，使消息从旧到新排列（符合聊天界面习惯）
+        Collections.reverse(voList);
+        
         // 返回专门的游标分页结果
         return CursorPageResult.<GroupMessageVO>builder()
                 .records(voList)
@@ -485,7 +494,7 @@ public class MessageServiceImpl implements MessageService {
 
         Map<Long, Integer> unreadCountMap = new HashMap<>();
         if (!items.isEmpty()) {
-            List<GroupUnreadCountVO> results = groupMessageMapper.batchSelectUnreadCount(items);
+            List<GroupUnreadCountVO> results = groupMessageMapper.batchSelectUnreadCount(items, userId);
             for (GroupUnreadCountVO vo : results) {
                 unreadCountMap.put(vo.getGroupId(), vo.getCount());
             }
@@ -548,6 +557,7 @@ public class MessageServiceImpl implements MessageService {
                         .eq(ChatGroupMember::getGroupId, dto.getGroupId())
                         .eq(ChatGroupMember::getUserId, operatorId)
                         .eq(ChatGroupMember::getIsRemoved, 0)
+                        .eq(ChatGroupMember::getStatus, 1) // ✅ 必须是已通过审核的成员
                         .in(ChatGroupMember::getRole, 1, 2) // 1-管理员，2-群主
         );
 
@@ -606,6 +616,7 @@ public class MessageServiceImpl implements MessageService {
                         .eq(ChatGroupMember::getGroupId, groupId)
                         .eq(ChatGroupMember::getUserId, operatorId)
                         .eq(ChatGroupMember::getIsRemoved, 0)
+                        .eq(ChatGroupMember::getStatus, 1) // ✅ 必须是已通过审核的成员
                         .in(ChatGroupMember::getRole, 1, 2)
         );
 
@@ -792,6 +803,50 @@ public class MessageServiceImpl implements MessageService {
         log.info("用户{}已标记群聊{}的所有消息为已读", userId, groupId);
     }
 
+    @Override
+    public List<GroupMemberVO> getGroupMembers(Long userId, Long groupId) {
+        // 1. 验证当前用户是否为群成员
+        validateGroupMember(userId, groupId);
+
+        // 2. 查询群聊的所有已通过成员
+        List<ChatGroupMember> members = chatGroupMemberMapper.selectList(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getIsRemoved, 0)
+                        .eq(ChatGroupMember::getStatus, 1) // 只查询已通过的成员
+                        .orderByAsc(ChatGroupMember::getRole) // 群主在前，管理员次之，普通成员最后
+                        .orderByAsc(ChatGroupMember::getJoinTime) // 同角色按加入时间排序
+        );
+
+        // 3. 批量获取用户信息（避免 N+1 查询）
+        List<Long> userIds = members.stream()
+                .map(ChatGroupMember::getUserId)
+                .collect(Collectors.toList());
+
+        List<User> users = userMapper.selectBatchIds(userIds);
+        Map<Long, User> userMap = users.stream()
+                .collect(Collectors.toMap(User::getId, u -> u));
+
+        // 4. 组装 VO
+        return members.stream().map(member -> {
+            GroupMemberVO vo = new GroupMemberVO();
+            vo.setId(member.getId());
+            vo.setUserId(member.getUserId());
+            vo.setRole(member.getRole());
+            vo.setNickname(member.getNickname());
+            vo.setJoinTime(member.getJoinTime());
+
+            // 填充用户信息
+            User user = userMap.get(member.getUserId());
+            if (user != null) {
+                vo.setUsername(user.getUsername());
+                vo.setAvatar(user.getAvatar());
+            }
+
+            return vo;
+        }).collect(Collectors.toList());
+    }
+
     // ==================== 私有辅助方法 ====================
 
     /**
@@ -841,7 +896,7 @@ public class MessageServiceImpl implements MessageService {
             String senderName = sender != null ? sender.getUsername() : "未知用户";
             String senderAvatar = sender != null ? sender.getAvatar() : "";
 
-            Map<String, Object> pushMessage = buildPushMessage("new_message", message.getId(), senderId, 
+            Map<String, Object> pushMessage = buildPushMessage("private_message", message.getId(), senderId,
                     message.getMessageType(), message.getContent(), message.getCreateTime(), null, receiverId);
             
             // 补充发送者信息
@@ -868,7 +923,7 @@ public class MessageServiceImpl implements MessageService {
 
         for (ChatGroupMember m : members) {
             if (!m.getUserId().equals(senderId) && webSocketHandler.isUserOnline(m.getUserId())) {
-                Map<String, Object> pushMessage = buildPushMessage("new_group_message", message.getId(), senderId, 
+                Map<String, Object> pushMessage = buildPushMessage("group_message", message.getId(), senderId,
                         message.getMessageType(), message.getContent(), message.getCreateTime(), groupId, m.getUserId());
                 webSocketHandler.sendMessageToUser(m.getUserId(), pushMessage);
             }
@@ -992,5 +1047,225 @@ public class MessageServiceImpl implements MessageService {
         }
 
         return new ArrayList<>(latestMap.values());
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void renameGroup(Long userId, Long groupId, String newName) {
+        // 1. 验证群聊是否存在
+        ChatGroup group = chatGroupMapper.selectById(groupId);
+        if (group == null) {
+            throw new BusinessException(ResultCode.GROUP_NOT_EXIST);
+        }
+        
+        // 2. 验证是否是群主
+        if (!group.getOwnerId().equals(userId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "只有群主可以重命名群聊");
+        }
+        
+        // 3. 更新群名称
+        group.setGroupName(newName);
+        group.setUpdateTime(LocalDateTime.now());
+        chatGroupMapper.updateById(group);
+        
+        log.info("用户{}将群聊{}重命名为{}", userId, groupId, newName);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void transferGroupOwner(Long userId, Long groupId, Long newOwnerId) {
+        // 1. 验证群聊是否存在
+        ChatGroup group = chatGroupMapper.selectById(groupId);
+        if (group == null) {
+            throw new BusinessException(ResultCode.GROUP_NOT_EXIST);
+        }
+        
+        // 2. 验证是否是群主
+        if (!group.getOwnerId().equals(userId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "只有群主可以转让群主");
+        }
+        
+        // 3. 验证新群主不能是自己
+        if (userId.equals(newOwnerId)) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "不能转让给自己");
+        }
+        
+        // 4. 验证新群主是否是群成员
+        ChatGroupMember newOwnerMember = chatGroupMemberMapper.selectOne(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getUserId, newOwnerId)
+                        .eq(ChatGroupMember::getStatus, 1)
+        );
+        
+        if (newOwnerMember == null) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "新群主必须是群成员");
+        }
+        
+        // 5. 更新原群主为普通成员
+        ChatGroupMember oldOwnerMember = chatGroupMemberMapper.selectOne(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getUserId, userId)
+        );
+        
+        if (oldOwnerMember != null) {
+            oldOwnerMember.setRole(0); // 设为普通成员
+            chatGroupMemberMapper.updateById(oldOwnerMember);
+        }
+        
+        // 6. 更新新群主为群主角色
+        newOwnerMember.setRole(2); // 设为群主
+        chatGroupMemberMapper.updateById(newOwnerMember);
+        
+        // 7. 更新群聊的ownerId
+        group.setOwnerId(newOwnerId);
+        group.setUpdateTime(LocalDateTime.now());
+        chatGroupMapper.updateById(group);
+        
+        log.info("用户{}将群聊{}的群主转让给{}", userId, groupId, newOwnerId);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void setGroupAdmin(Long userId, Long groupId, Long targetUserId, Boolean isAdmin) {
+        // 1. 验证群聊是否存在
+        ChatGroup group = chatGroupMapper.selectById(groupId);
+        if (group == null) {
+            throw new BusinessException(ResultCode.GROUP_NOT_EXIST);
+        }
+        
+        // 2. 验证是否是群主
+        if (!group.getOwnerId().equals(userId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "只有群主可以设置管理员");
+        }
+        
+        // 3. 验证不能操作自己
+        if (userId.equals(targetUserId)) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "不能操作自己");
+        }
+        
+        // 4. 查找目标成员
+        ChatGroupMember member = chatGroupMemberMapper.selectOne(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getUserId, targetUserId)
+                        .eq(ChatGroupMember::getStatus, 1)
+        );
+        
+        if (member == null) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "该用户不是群成员");
+        }
+        
+        // 5. 设置或取消管理员
+        member.setRole(isAdmin ? 1 : 0); // 1-管理员，0-普通成员
+        chatGroupMemberMapper.updateById(member);
+        
+        log.info("用户{}将群聊{}中的用户{}{}管理员", userId, groupId, targetUserId, isAdmin ? "设为" : "取消");
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void removeGroupMember(Long userId, Long groupId, Long targetUserId) {
+        // 1. 验证群聊是否存在
+        ChatGroup group = chatGroupMapper.selectById(groupId);
+        if (group == null) {
+            throw new BusinessException(ResultCode.GROUP_NOT_EXIST);
+        }
+        
+        // 2. 验证操作者权限（群主或管理员）
+        ChatGroupMember operatorMember = chatGroupMemberMapper.selectOne(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getUserId, userId)
+                        .eq(ChatGroupMember::getStatus, 1)
+        );
+        
+        if (operatorMember == null || (operatorMember.getRole() != 1 && operatorMember.getRole() != 2)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "只有群主或管理员可以移除成员");
+        }
+        
+        // 3. 验证不能移除群主
+        if (group.getOwnerId().equals(targetUserId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "不能移除群主");
+        }
+        
+        // 4. 查找目标成员
+        ChatGroupMember targetMember = chatGroupMemberMapper.selectOne(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getUserId, targetUserId)
+                        .eq(ChatGroupMember::getStatus, 1)
+        );
+        
+        if (targetMember == null) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "该用户不是群成员");
+        }
+        
+        // 5. 软删除成员（标记为已移除）
+        targetMember.setIsRemoved(1);
+        targetMember.setStatus(0);
+        chatGroupMemberMapper.updateById(targetMember);
+        
+        // 6. 更新群成员数量
+        group.setMemberCount(group.getMemberCount() - 1);
+        group.setUpdateTime(LocalDateTime.now());
+        chatGroupMapper.updateById(group);
+        
+        log.info("用户{}从群聊{}中移除了用户{}", userId, groupId, targetUserId);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void disbandGroup(Long userId, Long groupId) {
+        // 1. 验证群聊是否存在
+        ChatGroup group = chatGroupMapper.selectById(groupId);
+        if (group == null) {
+            throw new BusinessException(ResultCode.GROUP_NOT_EXIST);
+        }
+        
+        // 2. 验证是否为群主
+        if (!group.getOwnerId().equals(userId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "只有群主可以解散群聊");
+        }
+        
+        // 3. 获取所有群成员（用于通知）
+        List<ChatGroupMember> members = chatGroupMemberMapper.selectList(
+                new LambdaQueryWrapper<ChatGroupMember>()
+                        .eq(ChatGroupMember::getGroupId, groupId)
+                        .eq(ChatGroupMember::getIsRemoved, 0)
+                        .eq(ChatGroupMember::getStatus, 1)
+        );
+        
+        // 4. 软删除所有群成员关系（标记为已移除）
+        for (ChatGroupMember member : members) {
+            member.setIsRemoved(1);
+            member.setStatus(0);
+            chatGroupMemberMapper.updateById(member);
+        }
+        
+        // 5. 更新群聊状态（标记为已解散）
+        group.setMemberCount(0);
+        group.setUpdateTime(LocalDateTime.now());
+        // 注意：这里可以选择物理删除群聊，或者保留记录但标记为已解散
+        // 如果数据库有status字段，可以设置为已解散状态
+        chatGroupMapper.updateById(group);
+        
+        // 6. 通知所有在线的群成员群聊已解散
+        for (ChatGroupMember member : members) {
+            Long memberId = member.getUserId();
+            if (!memberId.equals(userId) && webSocketHandler.isUserOnline(memberId)) {
+                Map<String, Object> notification = Map.of(
+                        "type", "group_disbanded",
+                        "groupId", groupId,
+                        "groupName", group.getGroupName(),
+                        "message", "群聊已被群主解散"
+                );
+                webSocketHandler.sendMessageToUser(memberId, notification);
+                log.debug("已通知成员{}群聊{}已解散", memberId, groupId);
+            }
+        }
+        
+        log.info("用户{}已解散群聊{}", userId, groupId);
     }
 }

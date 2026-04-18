@@ -85,7 +85,7 @@ public class MessageController {
     @PostMapping("/group/create")
     @RequireRole
     @Operation(summary = "创建群聊", description = "创建新的群聊并邀请初始成员")
-    public Result<Long> createGroup(@Valid @ModelAttribute CreateGroupDTO dto) {
+    public Result<Long> createGroup(@Valid @RequestBody CreateGroupDTO dto) {
         Long userId = UserContext.getUserId();
         Long groupId = messageService.createGroup(userId, dto);
         return Result.success(groupId);
@@ -178,6 +178,64 @@ public class MessageController {
     public Result<Void> clearGroupChatHistory(@PathVariable Long groupId) {
         Long userId = UserContext.getUserId();
         messageService.clearGroupChatHistory(userId, groupId);
+        return Result.success(null);
+    }
+
+    @GetMapping("/group/members/{groupId}")
+    @RequireRole
+    @Operation(summary = "获取群聊成员列表", description = "获取指定群聊的所有成员（按角色排序：群主、管理员、普通成员）")
+    public Result<List<GroupMemberVO>> getGroupMembers(@PathVariable Long groupId) {
+        Long userId = UserContext.getUserId();
+        List<GroupMemberVO> members = messageService.getGroupMembers(userId, groupId);
+        return Result.success(members);
+    }
+
+    @PutMapping("/group/{groupId}/name")
+    @RequireRole
+    @Operation(summary = "重命名群聊", description = "仅群主可以修改群名称")
+    public Result<Void> renameGroup(@PathVariable Long groupId, 
+                                     @Valid @RequestBody UpdateGroupDTO dto) {
+        Long userId = UserContext.getUserId();
+        messageService.renameGroup(userId, groupId, dto.getGroupName());
+        return Result.success(null);
+    }
+
+    @PostMapping("/group/{groupId}/transfer")
+    @RequireRole
+    @Operation(summary = "转让群主", description = "仅群主可以将群主转让给其他成员")
+    public Result<Void> transferGroupOwner(@PathVariable Long groupId,
+                                            @Valid @RequestBody TransferGroupOwnerDTO dto) {
+        Long userId = UserContext.getUserId();
+        messageService.transferGroupOwner(userId, groupId, dto.getNewOwnerId());
+        return Result.success(null);
+    }
+
+    @PutMapping("/group/{groupId}/admin")
+    @RequireRole
+    @Operation(summary = "设置或取消管理员", description = "仅群主可以设置或取消管理员")
+    public Result<Void> setGroupAdmin(@PathVariable Long groupId,
+                                       @Valid @RequestBody SetGroupAdminDTO dto) {
+        Long userId = UserContext.getUserId();
+        messageService.setGroupAdmin(userId, groupId, dto.getUserId(), dto.getIsAdmin());
+        return Result.success(null);
+    }
+
+    @DeleteMapping("/group/{groupId}/member")
+    @RequireRole
+    @Operation(summary = "移除群成员", description = "群主或管理员可以移除普通成员")
+    public Result<Void> removeGroupMember(@PathVariable Long groupId,
+                                           @Valid @RequestBody RemoveGroupMemberDTO dto) {
+        Long userId = UserContext.getUserId();
+        messageService.removeGroupMember(userId, groupId, dto.getUserId());
+        return Result.success(null);
+    }
+
+    @DeleteMapping("/group/disband/{groupId}")
+    @RequireRole
+    @Operation(summary = "解散群聊", description = "仅群主可以解散群聊，解散后所有成员将被移除")
+    public Result<Void> disbandGroup(@PathVariable Long groupId) {
+        Long userId = UserContext.getUserId();
+        messageService.disbandGroup(userId, groupId);
         return Result.success(null);
     }
 

@@ -12,5 +12,5 @@ import java.util.List;
 @Mapper
 public interface GroupMessageMapper extends BaseMapper<GroupMessage> {
     
-    List<GroupUnreadCountVO> batchSelectUnreadCount(@Param("items") List<MemberUnreadItem> items);
+    List<GroupUnreadCountVO> batchSelectUnreadCount(@Param("items") List<MemberUnreadItem> items, @Param("userId") Long userId);
 }

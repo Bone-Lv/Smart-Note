@@ -82,7 +82,17 @@ public enum WebSocketMessageType {
     /**
      * 笔记内容更新广播
      */
-    NOTE_CONTENT_UPDATED("note_content_updated");
+    NOTE_CONTENT_UPDATED("note_content_updated"),
+    
+    /**
+     * 好友上线通知
+     */
+    FRIEND_ONLINE("friend_online"),
+    
+    /**
+     * 好友下线通知
+     */
+    FRIEND_OFFLINE("friend_offline");
     
     /**
      * 消息类型的字符串值（用于 JSON 传输）

@@ -19,11 +19,7 @@ import com.gdut.domain.dto.note.UpdateAnnotationDTO;
 import com.gdut.domain.dto.note.UpdateNoteDTO;
 import com.gdut.domain.dto.note.UpdateVisibilityDTO;
 import com.gdut.domain.entity.chat.PrivateMessage;
-import com.gdut.domain.entity.note.AiUsage;
-import com.gdut.domain.entity.note.Note;
-import com.gdut.domain.entity.note.NoteAnnotation;
-import com.gdut.domain.entity.note.NoteFriendPermission;
-import com.gdut.domain.entity.note.NoteVersionHistory;
+import com.gdut.domain.entity.note.*;
 import com.gdut.domain.entity.user.User;
 import com.gdut.domain.vo.note.AnnotationVO;
 import com.gdut.domain.vo.note.AiAnalysisVO;
@@ -35,13 +31,7 @@ import com.gdut.domain.vo.note.NoteVO;
 import com.gdut.domain.vo.note.NoteVersionHistoryVO;
 import com.gdut.common.enums.NoteType;
 import com.gdut.common.enums.NoteVisibility;
-import com.gdut.mapper.AiUsageMapper;
-import com.gdut.mapper.NoteAnnotationMapper;
-import com.gdut.mapper.NoteFriendPermissionMapper;
-import com.gdut.mapper.NoteMapper;
-import com.gdut.mapper.NoteVersionHistoryMapper;
-import com.gdut.mapper.PrivateMessageMapper;
-import com.gdut.mapper.UserMapper;
+import com.gdut.mapper.*;
 import com.gdut.service.NoteService;
 import com.gdut.service.VectorStoreService;
 import com.gdut.common.util.ChatWebSocketHandler;
@@ -98,13 +88,15 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
     private final AliyunOSSOperator aliyunOSSOperator;
     
     private final CacheManager cacheManager;
+
+    private final NoteFolderMapper noteFolderMapper;
     
     @Value("${server.servlet.context-path:}")
     private String contextPath;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void createNote(Long userId, CreateNoteDTO createNoteDTO) {
+    public Long createNote(Long userId, CreateNoteDTO createNoteDTO) {
         // 转成 PO
         Note note = BeanUtil.copyProperties(createNoteDTO, Note.class);
 
@@ -116,6 +108,8 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
         
         // 同步到向量数据库
         vectorStoreService.addNoteToVectorStore(note.getId(), note.getTitle(), note.getContent(), note.getTags(), userId);
+        
+        return note.getId();
     }
 
     @Override
@@ -323,7 +317,7 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void updateNote(Long userId, Long noteId, UpdateNoteDTO updateNoteDTO) {
+    public Integer updateNote(Long userId, Long noteId, UpdateNoteDTO updateNoteDTO) {
         Note note = getById(noteId);
         
         if (note == null) {
@@ -376,6 +370,8 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
         vectorStoreService.addNoteToVectorStore(updatedNote.getId(), updatedNote.getTitle(), updatedNote.getContent(), updatedNote.getTags(), updatedNote.getUserId());
         
         log.info("用户{}将笔记{}保存为新版本，版本号: {}", userId, noteId, updatedNote.getVersion());
+        
+        return updatedNote.getVersion();
     }
 
     @Override
@@ -1382,7 +1378,7 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
     
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void createAnnotation(Long userId, Long noteId, CreateAnnotationDTO createAnnotationDTO) {
+    public Long createAnnotation(Long userId, Long noteId, CreateAnnotationDTO createAnnotationDTO) {
         Note note = getById(noteId);
         if (note == null) {
             throw new BusinessException(ResultCode.NOTE_NOT_EXIST);
@@ -1437,6 +1433,8 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
         annotation.setUpdateTime(LocalDateTime.now());
         
         noteAnnotationMapper.insert(annotation);
+        
+        return annotation.getId();
     }
     
     @Override
@@ -1671,5 +1669,39 @@ public class NoteServiceImpl extends ServiceImpl<NoteMapper, Note> implements No
         clearNoteDetailCache(noteId);
         
         log.debug("用户{}实时同步笔记{}的内容", userId, noteId);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void moveNote(Long userId, Long noteId, Long folderId) {
+        Note note = getById(noteId);
+
+        if (note == null) {
+            throw new BusinessException(ResultCode.NOTE_NOT_EXIST);
+        }
+
+        // 只有笔记所有者才能移动
+        if (!note.getUserId().equals(userId)) {
+            throw new BusinessException(ResultCode.NOTE_NO_PERMISSION, "无权移动该笔记");
+        }
+
+        // 如果指定了文件夹ID，验证文件夹是否存在且属于该用户
+        if (folderId != null) {
+            NoteFolder folder = noteFolderMapper.selectById(folderId);
+            if (folder == null) {
+                throw new BusinessException(ResultCode.BAD_REQUEST, "文件夹不存在");
+            }
+            if (!folder.getUserId().equals(userId)) {
+                throw new BusinessException(ResultCode.NOTE_NO_PERMISSION, "无权访问该文件夹");
+            }
+        }
+
+        // 更新笔记的文件夹ID
+        lambdaUpdate()
+                .eq(Note::getId, noteId)
+                .set(Note::getFolderId, folderId)
+                .update();
+
+        log.info("用户{}将笔记{}移动到文件夹{}", userId, noteId, folderId == null ? "根目录" : folderId);
     }
 }

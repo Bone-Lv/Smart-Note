@@ -28,4 +28,7 @@ public class UserVO {
 
     @Schema(description = "创建时间")
     private LocalDateTime createTime;
+    
+    @Schema(description = "在线状态：0-离线，1-在线")
+    private Integer onlineStatus;
 }

@@ -34,7 +34,7 @@ public class NoteFolderServiceImpl extends ServiceImpl<NoteFolderMapper, NoteFol
     
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void createFolder(Long userId, String name, Long parentId, Integer sortOrder) {
+    public Long createFolder(Long userId, String name, Long parentId, Integer sortOrder) {
         // 如果指定了父文件夹，验证父文件夹是否存在且属于当前用户
         if (parentId != null) {
             NoteFolder parentFolder = getById(parentId);
@@ -59,6 +59,8 @@ public class NoteFolderServiceImpl extends ServiceImpl<NoteFolderMapper, NoteFol
         folder.setSortOrder(sortOrder != null ? sortOrder : 0);
         
         save(folder);
+        
+        return folder.getId();
     }
     
     @Override
@@ -163,15 +165,57 @@ public class NoteFolderServiceImpl extends ServiceImpl<NoteFolderMapper, NoteFol
     public List<FolderVO> getChildFolders(Long userId, Long parentId) {
         LambdaQueryWrapper<NoteFolder> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(NoteFolder::getUserId, userId)
-               .eq(NoteFolder::getParentId, parentId)
-               .orderByAsc(NoteFolder::getSortOrder)
-               .orderByAsc(NoteFolder::getCreateTime);
+                .eq(NoteFolder::getParentId, parentId)
+                .orderByAsc(NoteFolder::getSortOrder);
         
         List<NoteFolder> folders = list(wrapper);
-        
         return folders.stream()
-                .map(folder -> convertToVO(folder, userId))
-                .collect(Collectors.toList());
+                .map(folder -> BeanUtil.copyProperties(folder, FolderVO.class))
+                .toList();
+    }
+    
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void moveFolder(Long userId, Long folderId, Long newParentId) {
+        NoteFolder folder = getById(folderId);
+        
+        if (folder == null) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "文件夹不存在");
+        }
+        
+        // 只有文件夹所有者才能移动
+        if (!folder.getUserId().equals(userId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "无权操作该文件夹");
+        }
+        
+        // 不能将文件夹移动到自己下面（防止循环引用）
+        if (folderId.equals(newParentId)) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "不能将文件夹移动到自己下面");
+        }
+        
+        // 如果指定了新的父文件夹，验证父文件夹是否存在且属于该用户
+        if (newParentId != null) {
+            NoteFolder parentFolder = getById(newParentId);
+            if (parentFolder == null) {
+                throw new BusinessException(ResultCode.BAD_REQUEST, "父文件夹不存在");
+            }
+            if (!parentFolder.getUserId().equals(userId)) {
+                throw new BusinessException(ResultCode.FORBIDDEN, "无权访问该父文件夹");
+            }
+            
+            // 检查是否会造成循环引用（新父文件夹不能是当前文件夹的子文件夹）
+            if (isDescendant(folderId, newParentId, userId)) {
+                throw new BusinessException(ResultCode.BAD_REQUEST, "不能将文件夹移动到其子文件夹下");
+            }
+        }
+        
+        // 更新文件夹的父文件夹ID
+        lambdaUpdate()
+                .eq(NoteFolder::getId, folderId)
+                .set(NoteFolder::getParentId, newParentId)
+                .update();
+        
+        log.info("用户{}将文件夹{}移动到{}", userId, folderId, newParentId == null ? "根目录" : "文件夹" + newParentId);
     }
     
     /**
@@ -216,5 +260,23 @@ public class NoteFolderServiceImpl extends ServiceImpl<NoteFolderMapper, NoteFol
                 .sum();
         
         return currentFolderNoteCount + childFoldersNoteCount;
+    }
+    
+    /**
+     * 检查 targetFolderId 是否是 sourceFolderId 的后代文件夹（防止循环引用）
+     */
+    private boolean isDescendant(Long sourceFolderId, Long targetFolderId, Long userId) {
+        Long currentId = targetFolderId;
+        while (currentId != null) {
+            if (currentId.equals(sourceFolderId)) {
+                return true;
+            }
+            NoteFolder currentFolder = getById(currentId);
+            if (currentFolder == null || !currentFolder.getUserId().equals(userId)) {
+                break;
+            }
+            currentId = currentFolder.getParentId();
+        }
+        return false;
     }
 }

@@ -3,6 +3,7 @@ package com.gdut.controller;
 import com.gdut.annotation.RequireRole;
 import com.gdut.domain.dto.note.DeleteFolderDTO;
 import com.gdut.domain.dto.note.FolderDTO;
+import com.gdut.domain.dto.note.MoveFolderDTO;
 import com.gdut.domain.entity.common.Result;
 import com.gdut.domain.vo.note.FolderVO;
 import com.gdut.service.NoteFolderService;
@@ -25,15 +26,15 @@ public class FolderController {
     
     @PostMapping
     @RequireRole
-    @Operation(summary = "创建文件夹", description = "创建一个新的笔记文件夹，可选择指定父文件夹")
-    public Result<Void> createFolder(@Valid @RequestBody FolderDTO folderDTO) {
-        noteFolderService.createFolder(
+    @Operation(summary = "创建文件夹", description = "创建一个新的笔记文件夹，可选择指定父文件夹，返回新建文件夹的ID")
+    public Result<Long> createFolder(@Valid @RequestBody FolderDTO folderDTO) {
+        Long folderId = noteFolderService.createFolder(
                 UserContext.getUserId(),
                 folderDTO.getName(),
                 folderDTO.getParentId(),
                 folderDTO.getSortOrder()
         );
-        return Result.success(null);
+        return Result.success(folderId);
     }
     
     @PutMapping("/{folderId}")
@@ -66,5 +67,13 @@ public class FolderController {
     @Operation(summary = "获取子文件夹列表", description = "获取指定父文件夹下的子文件夹列表，不传parentId表示获取根文件夹")
     public Result<List<FolderVO>> getChildFolders(@RequestParam(required = false) Long parentId) {
         return Result.success(noteFolderService.getChildFolders(UserContext.getUserId(), parentId));
+    }
+    
+    @PutMapping("/{folderId}/move")
+    @RequireRole
+    @Operation(summary = "移动文件夹", description = "将文件夹移动到指定父文件夹下，parentId传null表示移到根目录")
+    public Result<Void> moveFolder(@PathVariable Long folderId, @Valid @RequestBody MoveFolderDTO moveFolderDTO) {
+        noteFolderService.moveFolder(UserContext.getUserId(), folderId, moveFolderDTO.getParentId());
+        return Result.success(null);
     }
 }

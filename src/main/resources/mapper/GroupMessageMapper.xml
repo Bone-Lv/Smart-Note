@@ -5,7 +5,8 @@
     <select id="batchSelectUnreadCount" resultType="com.gdut.domain.vo.chat.GroupUnreadCountVO">
         SELECT group_id as groupId, COUNT(*) as count
         FROM group_message
-        WHERE 
+        WHERE sender_id != #{userId}
+        AND 
         <foreach collection="items" item="item" separator="OR" open="(" close=")">
             (group_id = #{item.groupId} AND id > #{item.lastReadMsgId})
         </foreach>

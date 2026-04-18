@@ -73,10 +73,20 @@ public class FriendController {
 
     @PostMapping("/group")
     @RequireRole
-    @Operation(summary = "创建好友分组", description = "创建新的好友分组")
-    public Result<Void> createFriendGroup(@RequestParam @NotBlank(message = "分组名称不能为空") 
+    @Operation(summary = "创建好友分组", description = "创建新的好友分组，返回新建分组的ID")
+    public Result<Long> createFriendGroup(@RequestParam @NotBlank(message = "分组名称不能为空") 
                                           @Size(max = 50, message = "分组名称不能超过50个字符") String groupName) {
-        friendService.createFriendGroup(UserContext.getUserId(), groupName);
+        Long groupId = friendService.createFriendGroup(UserContext.getUserId(), groupName);
+        return Result.success(groupId);
+    }
+
+    @PutMapping("/group/{groupId}")
+    @RequireRole
+    @Operation(summary = "重命名好友分组", description = "修改指定分组的名称")
+    public Result<Void> renameFriendGroup(@PathVariable Long groupId, 
+                                          @RequestParam @NotBlank(message = "分组名称不能为空") 
+                                          @Size(max = 50, message = "分组名称不能超过50个字符") String groupName) {
+        friendService.renameFriendGroup(UserContext.getUserId(), groupId, groupName);
         return Result.success(null);
     }
 

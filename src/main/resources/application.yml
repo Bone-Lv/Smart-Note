@@ -71,7 +71,7 @@ multimodal:
 # Server配置
 server:
   error:
-    include-message: none           # 不包含错误消息
+    include-message: NEVER           # 绝不包含错误消息
     include-stacktrace: never       # 绝不包含堆栈跟踪
     include-binding-errors: never   # 不包含绑定错误详情
     include-exception: false        # 不包含异常类名

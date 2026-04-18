@@ -1,0 +1,69 @@
+2026-04-09 22:12:27.597 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-09 22:12:27.648 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 14488 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-09 22:12:27.649 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-09 22:12:29.200 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-09 22:12:29.210 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-09 22:12:29.211 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-09 22:12:29.211 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-09 22:12:29.255 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-09 22:12:29.256 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1571 ms
+2026-04-09 22:12:29.842 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7218268d-dae1-48eb-820c-ce136654f9d0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-09 22:12:29.847 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-09 22:12:30.121 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-09 22:12:30.132 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-09 22:12:30.137 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.873 seconds (process running for 4.018)
+2026-04-09 22:12:39.227 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-09 22:12:39.227 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-09 22:12:39.227 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-09 22:12:39.406 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=zhangsan@example.com, password=12345678)]
+2026-04-09 22:12:39.480 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-09 22:12:39.978 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ad89db6
+2026-04-09 22:12:39.981 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-09 22:12:40.526 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 1120ms
+2026-04-09 22:13:07.381 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:13:07.381 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-09 22:13:07.402 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 令牌无效，响应401
+2026-04-09 22:13:23.406 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:13:23.407 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-09 22:13:23.407 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 令牌无效，响应401
+2026-04-09 22:14:21.754 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=zhangsan@example.com, password=12345678)]
+2026-04-09 22:14:21.845 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 91ms
+2026-04-09 22:14:43.366 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:14:43.366 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NzUxMjYxLCJpYXQiOjE3NzU3NDQwNjF9.7zXnG2lOUskLop48e8yO7EspzxrThWfL8KD0MlyMkbw
+2026-04-09 22:14:43.367 [http-nio-8080-exec-5] INFO  com.gdut.util.JwtUtil - 剩余时间: 7177633
+2026-04-09 22:14:43.367 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-09 22:14:43.415 [http-nio-8080-exec-5] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.getNoteList | 用户: 2 | 参数: [NoteQueryDTO(page=1, pageSize=10, keyword=, sortOrder=time, visibility=null)]
+2026-04-09 22:14:43.498 [http-nio-8080-exec-5] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.getNoteList | 耗时: 83ms
+2026-04-09 22:15:08.502 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:15:08.503 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NzUxMjYxLCJpYXQiOjE3NzU3NDQwNjF9.7zXnG2lOUskLop48e8yO7EspzxrThWfL8KD0MlyMkbw
+2026-04-09 22:15:08.503 [http-nio-8080-exec-6] INFO  com.gdut.util.JwtUtil - 剩余时间: 7152497
+2026-04-09 22:15:08.503 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-09 22:15:08.505 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.getNoteDetail | 用户: 2 | 参数: [1]
+2026-04-09 22:15:08.569 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.getNoteDetail | 耗时: 63ms
+2026-04-09 22:15:46.038 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:15:46.038 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: null
+2026-04-09 22:15:46.038 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 令牌为空，响应401
+2026-04-09 22:15:50.789 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:15:50.789 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: null
+2026-04-09 22:15:50.789 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 令牌为空，响应401
+2026-04-09 22:16:03.235 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:16:03.235 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: null
+2026-04-09 22:16:03.235 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 令牌为空，响应401
+2026-04-09 22:16:05.249 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:16:05.249 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: null
+2026-04-09 22:16:05.249 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 令牌为空，响应401
+2026-04-09 22:16:09.622 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:16:09.622 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: null
+2026-04-09 22:16:09.622 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 令牌为空，响应401
+2026-04-09 22:16:19.224 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-09 22:16:19.225 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: null
+2026-04-09 22:16:19.225 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 令牌为空，响应401
+2026-04-09 22:17:13.474 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-09 22:17:13.480 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-09 22:17:13.484 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-09 22:17:13.487 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

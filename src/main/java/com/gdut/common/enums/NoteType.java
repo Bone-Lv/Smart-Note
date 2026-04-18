@@ -8,11 +8,12 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum NoteType {
-    MARKDOWN(0, "Markdown笔记"),
-    PDF(1, "PDF笔记");
+    MARKDOWN("MARKDOWN", "Markdown笔记"),
+    PDF("PDF", "PDF笔记");
 
     @EnumValue
-    private final int code;
     @JsonValue
+    private final String value;
+    
     private final String description;
 }

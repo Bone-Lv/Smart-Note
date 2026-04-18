@@ -21,6 +21,9 @@ public class FriendRequestVO {
     @Schema(description = "申请人头像URL")
     private String applicantAvatar;
     
+    @Schema(description = "申请人在线状态：0-离线，1-在线")
+    private Integer applicantOnlineStatus;
+    
     @Schema(description = "被申请人用户ID")
     private Long friendUserId;
     

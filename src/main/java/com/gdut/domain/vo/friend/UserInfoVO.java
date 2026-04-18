@@ -25,4 +25,7 @@ public class UserInfoVO {
     
     @Schema(description = "座右铭")
     private String motto;
+    
+    @Schema(description = "在线状态：0-离线，1-在线")
+    private Integer onlineStatus;
 }

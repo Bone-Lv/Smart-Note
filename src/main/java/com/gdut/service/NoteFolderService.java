@@ -10,8 +10,9 @@ public interface NoteFolderService extends IService<NoteFolder> {
     
     /**
      * 创建文件夹
+     * @return 新建文件夹的ID
      */
-    void createFolder(Long userId, String name, Long parentId, Integer sortOrder);
+    Long createFolder(Long userId, String name, Long parentId, Integer sortOrder);
     
     /**
      * 重命名文件夹
@@ -33,4 +34,13 @@ public interface NoteFolderService extends IService<NoteFolder> {
      * 获取指定父文件夹下的子文件夹列表
      */
     List<FolderVO> getChildFolders(Long userId, Long parentId);
+    
+    /**
+     * 移动文件夹到指定父文件夹
+     *
+     * @param userId 用户ID
+     * @param folderId 要移动的文件夹ID
+     * @param newParentId 新的父文件夹ID，传null表示移到根目录
+     */
+    void moveFolder(Long userId, Long folderId, Long newParentId);
 }

@@ -1,0 +1,517 @@
+2026-04-14 12:16:42.335 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:16:42.410 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 20012 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:16:42.411 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:16:44.764 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:16:44.774 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:16:44.775 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:16:44.775 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:16:44.821 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:16:44.821 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2356 ms
+2026-04-14 12:16:45.345 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:16:45.599 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'folderController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\FolderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'noteFolderServiceImpl': Unsatisfied dependency expressed through field 'baseMapper': No qualifying bean of type 'com.gdut.mapper.NoteFolderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-04-14 12:16:45.601 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:16:45.611 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:16:45.625 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'folderController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\FolderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'noteFolderServiceImpl': Unsatisfied dependency expressed through field 'baseMapper': No qualifying bean of type 'com.gdut.mapper.NoteFolderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:12)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteFolderServiceImpl': Unsatisfied dependency expressed through field 'baseMapper': No qualifying bean of type 'com.gdut.mapper.NoteFolderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.gdut.mapper.NoteFolderMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2315)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1733)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 36 common frames omitted
+2026-04-14 12:18:04.930 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:18:04.954 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 7176 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:18:04.955 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:18:06.238 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:18:06.247 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:18:06.248 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:18:06.248 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:18:06.292 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:18:06.292 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1298 ms
+2026-04-14 12:18:06.740 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:18:06.837 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIChatController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\AIChatController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gdut.service.AIChatService' available: expected single matching bean but found 2: AIChatServiceImpl,AIChatService
+2026-04-14 12:18:06.839 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:18:06.848 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:18:06.859 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gdut.controller.AIChatController required a single bean, but 2 were found:
+	- AIChatServiceImpl: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\AIChatServiceImpl.class]
+	- AIChatService: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\AIChatService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-04-14 12:21:27.294 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:21:27.328 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 33788 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:21:27.329 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:21:28.589 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:21:28.598 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:21:28.599 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:21:28.600 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:21:28.644 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:21:28.644 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1268 ms
+2026-04-14 12:21:29.086 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:21:29.187 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIChatController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\AIChatController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gdut.service.AIChatService' available: expected single matching bean but found 2: AIChatServiceImpl,AIChatService
+2026-04-14 12:21:29.190 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:21:29.199 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:21:29.210 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gdut.controller.AIChatController required a single bean, but 2 were found:
+	- AIChatServiceImpl: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\AIChatServiceImpl.class]
+	- AIChatService: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\AIChatService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-04-14 12:23:01.425 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:23:01.453 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 11680 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:23:01.453 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:23:02.442 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:23:02.450 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:23:02.451 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:23:02.451 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:23:02.494 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:23:02.494 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1000 ms
+2026-04-14 12:23:03.172 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+2026-04-14 12:23:03.174 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:23:03.183 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:23:03.192 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 21 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:564)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:437)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172)
+	... 24 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gdut.domain.vo.chat.GroupUnreadCountVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:125)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:562)
+	... 30 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gdut.domain.vo.chat.GroupUnreadCountVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	... 32 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gdut.domain.vo.chat.GroupUnreadCountVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 38 common frames omitted
+2026-04-14 12:27:04.622 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:27:04.657 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 34084 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:27:04.657 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:27:05.608 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:27:05.617 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:27:05.618 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:27:05.618 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:27:05.661 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:27:05.661 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 966 ms
+2026-04-14 12:27:06.241 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+2026-04-14 12:27:06.243 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:27:06.251 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:27:06.261 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 21 common frames omitted
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:564)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:437)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:595)
+	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:224)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172)
+	... 24 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\code\java\java\Fine_the_lost\target\classes\mapper\GroupMessageMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gdut.domain.vo.chat.GroupUnreadCountVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:125)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98)
+	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:562)
+	... 30 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gdut.domain.vo.chat.GroupUnreadCountVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123)
+	... 32 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.gdut.domain.vo.chat.GroupUnreadCountVO'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
+	... 36 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.gdut.domain.vo.chat.GroupUnreadCountVO
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
+	... 38 common frames omitted
+2026-04-14 12:29:02.445 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:29:02.476 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 2664 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:29:02.476 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:29:04.031 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:29:04.039 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:29:04.040 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:29:04.040 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:29:04.083 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:29:04.083 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1561 ms
+2026-04-14 12:29:04.519 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:29:04.627 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIChatController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\AIChatController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gdut.service.AIChatService' available: expected single matching bean but found 2: AIChatServiceImpl,AIChatService
+2026-04-14 12:29:04.629 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:29:04.638 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:29:04.648 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gdut.controller.AIChatController required a single bean, but 2 were found:
+	- AIChatServiceImpl: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\AIChatServiceImpl.class]
+	- AIChatService: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\AIChatService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-04-14 12:35:02.948 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:35:02.988 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 29508 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:35:02.989 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:35:04.157 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:35:04.165 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:35:04.166 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:35:04.166 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:35:04.207 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:35:04.208 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1179 ms
+2026-04-14 12:35:04.622 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:35:04.719 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIChatController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\AIChatController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gdut.service.AIChatService' available: expected single matching bean but found 2: AIChatServiceImpl,AIChatService
+2026-04-14 12:35:04.722 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:35:04.730 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:35:04.740 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gdut.controller.AIChatController required a single bean, but 2 were found:
+	- AIChatServiceImpl: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\AIChatServiceImpl.class]
+	- AIChatService: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\AIChatService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-04-14 12:39:29.868 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:39:29.896 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 19504 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:39:29.897 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:39:31.951 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:39:31.958 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:39:31.959 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:39:31.959 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:39:32.000 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:39:32.001 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2068 ms
+2026-04-14 12:39:32.405 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:39:32.494 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIChatController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\AIChatController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gdut.service.AIChatService' available: expected single matching bean but found 2: AIChatServiceImpl,AIChatService
+2026-04-14 12:39:32.496 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:39:32.505 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:39:32.515 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gdut.controller.AIChatController required a single bean, but 2 were found:
+	- AIChatServiceImpl: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\AIChatServiceImpl.class]
+	- AIChatService: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\AIChatService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-04-14 12:41:38.940 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:41:38.973 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 12008 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:41:38.974 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:41:40.185 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:41:40.193 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:41:40.194 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:41:40.194 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:41:40.237 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:41:40.238 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1216 ms
+2026-04-14 12:41:40.664 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:41:40.755 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'AIChatController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\AIChatController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.gdut.service.AIChatService' available: expected single matching bean but found 2: AIChatServiceImpl,AIChatService
+2026-04-14 12:41:40.757 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-14 12:41:40.765 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-14 12:41:40.775 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.gdut.controller.AIChatController required a single bean, but 2 were found:
+	- AIChatServiceImpl: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\AIChatServiceImpl.class]
+	- AIChatService: defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\AIChatService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-6.1-Release-Notes#parameter-name-retention)
+
+
+2026-04-14 12:45:58.311 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:45:58.347 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 29100 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:45:58.348 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:45:59.629 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:45:59.637 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:45:59.639 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:45:59.639 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:45:59.682 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:45:59.682 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1285 ms
+2026-04-14 12:46:00.147 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:46:00.796 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 1af54ea8-f5a8-4b35-b0a5-8f0e5616895e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-14 12:46:00.800 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-14 12:46:01.134 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:46:01.141 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-14 12:46:01.147 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 3.129 seconds (process running for 3.773)
+2026-04-14 12:48:17.446 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-14 12:48:17.454 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-14 12:48:21.739 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:48:21.766 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 33908 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:48:21.766 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:48:22.987 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:48:22.995 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:48:22.996 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:48:22.996 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:48:23.039 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:48:23.039 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1221 ms
+2026-04-14 12:48:23.459 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:48:24.049 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a0cbf0c1-1b1c-457b-a00c-5b6b49bf71f1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-14 12:48:24.054 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-14 12:48:24.357 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:48:24.365 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-14 12:48:24.371 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.943 seconds (process running for 3.604)
+2026-04-14 12:52:53.267 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-14 12:52:53.269 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-14 12:52:53.270 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-14 12:52:54.414 [http-nio-8080-exec-3] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 891 ms
+2026-04-14 12:57:20.103 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-14 12:57:20.111 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-14 12:57:31.792 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-14 12:57:31.821 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 19544 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-14 12:57:31.822 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-14 12:57:33.461 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-14 12:57:33.468 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:57:33.469 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-14 12:57:33.469 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-14 12:57:33.510 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-14 12:57:33.510 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1649 ms
+2026-04-14 12:57:33.976 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.gdut.domain.entity.note.NoteEmbedding ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2026-04-14 12:57:35.007 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 777fa935-75d6-434b-8aa2-88116f56ff03
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-14 12:57:35.016 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-14 12:57:35.608 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-14 12:57:35.621 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-14 12:57:35.632 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 4.119 seconds (process running for 4.76)
+2026-04-14 12:58:01.660 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-14 12:58:01.664 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-14 12:58:01.666 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-14 12:58:02.795 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 912 ms
+2026-04-14 13:39:35.443 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-14 13:39:35.450 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete

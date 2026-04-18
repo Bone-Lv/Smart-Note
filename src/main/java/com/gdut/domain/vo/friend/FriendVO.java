@@ -24,6 +24,9 @@ public class FriendVO {
     @Schema(description = "好友座右铭")
     private String friendMotto;
     
+    @Schema(description = "在线状态：true-在线，false-离线")
+    private Boolean isOnline;
+    
     @Schema(description = "备注名")
     private String remark;
     

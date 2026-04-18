@@ -2,13 +2,7 @@ package com.gdut.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.gdut.annotation.RequireRole;
-import com.gdut.domain.dto.note.CreateAnnotationDTO;
-import com.gdut.domain.dto.note.CreateNoteDTO;
-import com.gdut.domain.dto.note.AiAnalysisDTO;
-import com.gdut.domain.dto.note.NoteQueryDTO;
-import com.gdut.domain.dto.note.UpdateAnnotationDTO;
-import com.gdut.domain.dto.note.UpdateNoteDTO;
-import com.gdut.domain.dto.note.UpdateVisibilityDTO;
+import com.gdut.domain.dto.note.*;
 import com.gdut.domain.entity.common.Result;
 import com.gdut.domain.vo.note.AnnotationVO;
 import com.gdut.domain.vo.note.AiAnalysisVO;
@@ -43,10 +37,10 @@ public class NoteController {
 
     @PostMapping
     @RequireRole
-    @Operation(summary = "新增笔记", description = "用户可新增一条笔记，包含标题、笔记内容、标签，默认仅自己可见")
-    public Result<Void> createNote(@Valid @RequestBody CreateNoteDTO createNoteDTO) {
-        noteService.createNote(UserContext.getUserId(), createNoteDTO);
-        return Result.success(null);
+    @Operation(summary = "新增笔记", description = "用户可新增一条笔记，包含标题、笔记内容、标签，默认仅自己可见，返回新建笔记的ID")
+    public Result<Long> createNote(@Valid @RequestBody CreateNoteDTO createNoteDTO) {
+        Long noteId = noteService.createNote(UserContext.getUserId(), createNoteDTO);
+        return Result.success(noteId);
     }
 
     @GetMapping("/list")
@@ -65,10 +59,10 @@ public class NoteController {
 
     @PutMapping("/{noteId}")
     @RequireRole
-    @Operation(summary = "保存笔记为新版本", description = "用户主动保存，创建新版本并归档历史")
-    public Result<Void> updateNote(@NotNull @PathVariable Long noteId, @Valid @RequestBody UpdateNoteDTO updateNoteDTO) {
-        noteService.updateNote(UserContext.getUserId(), noteId, updateNoteDTO);
-        return Result.success(null);
+    @Operation(summary = "保存笔记为新版本", description = "用户主动保存，创建新版本并归档历史，返回新版本号")
+    public Result<Integer> updateNote(@NotNull @PathVariable Long noteId, @Valid @RequestBody UpdateNoteDTO updateNoteDTO) {
+        Integer newVersion = noteService.updateNote(UserContext.getUserId(), noteId, updateNoteDTO);
+        return Result.success(newVersion);
     }
 
     @DeleteMapping("/{noteId}")
@@ -221,10 +215,10 @@ public class NoteController {
     
     @PostMapping("/{noteId}/annotations")
     @RequireRole
-    @Operation(summary = "创建批注", description = "对笔记的某行或某段内容进行批注解释说明")
-    public Result<Void> createAnnotation(@NotNull @PathVariable Long noteId, @Valid @RequestBody CreateAnnotationDTO createAnnotationDTO) {
-        noteService.createAnnotation(UserContext.getUserId(), noteId, createAnnotationDTO);
-        return Result.success(null);
+    @Operation(summary = "创建批注", description = "对笔记的某行或某段内容进行批注解释说明，返回新建批注的ID")
+    public Result<Long> createAnnotation(@NotNull @PathVariable Long noteId, @Valid @RequestBody CreateAnnotationDTO createAnnotationDTO) {
+        Long annotationId = noteService.createAnnotation(UserContext.getUserId(), noteId, createAnnotationDTO);
+        return Result.success(annotationId);
     }
     
     @PutMapping("/annotations/{annotationId}")
@@ -272,6 +266,14 @@ public class NoteController {
             updateNoteDTO.getTitle(),
             updateNoteDTO.getTags()
         );
+        return Result.success(null);
+    }
+    
+    @PutMapping("/{noteId}/move")
+    @RequireRole
+    @Operation(summary = "移动笔记", description = "将笔记移动到指定文件夹，folderId传null表示移到根目录")
+    public Result<Void> moveNote(@NotNull @PathVariable Long noteId, @RequestBody MoveNoteDTO moveNoteDTO) {
+        noteService.moveNote(UserContext.getUserId(), noteId, moveNoteDTO.getFolderId());
         return Result.success(null);
     }
 }

@@ -1,0 +1,941 @@
+2026-04-06 21:08:29.736 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:08:29.764 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 184020 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:08:29.764 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:08:30.716 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:08:30.724 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:08:30.726 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:08:30.726 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:08:30.760 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:08:30.760 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 959 ms
+2026-04-06 21:08:31.347 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 01d9b56b-521a-44b1-bde1-07da6749c0f8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:08:31.351 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:08:31.433 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:08:31.444 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:08:31.450 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.993 seconds (process running for 2.931)
+2026-04-06 21:08:45.555 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:08:45.556 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:08:45.556 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-06 21:13:10.417 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:13:10.421 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:13:14.714 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:13:14.749 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 185256 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:13:14.749 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:13:15.631 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:13:15.639 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:13:15.640 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:13:15.640 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:13:15.680 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:13:15.680 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 897 ms
+2026-04-06 21:13:16.077 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 613bd53e-75d2-4cbe-9d6c-6b2cfc617b09
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:13:16.080 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:13:16.278 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:13:16.291 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:13:16.296 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.831 seconds (process running for 2.402)
+2026-04-06 21:13:29.219 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:13:29.220 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:13:29.221 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-06 21:13:29.510 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)'] with root cause
+java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)'
+	at org.springdoc.core.service.GenericResponseService.lambda$getGenericMapResponse$8(GenericResponseService.java:700)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
+	at org.springdoc.core.service.GenericResponseService.getGenericMapResponse(GenericResponseService.java:702)
+	at org.springdoc.core.service.GenericResponseService.build(GenericResponseService.java:245)
+	at org.springdoc.api.AbstractOpenApiResource.calculatePath(AbstractOpenApiResource.java:496)
+	at org.springdoc.api.AbstractOpenApiResource.calculatePath(AbstractOpenApiResource.java:673)
+	at org.springdoc.webmvc.api.OpenApiResource.lambda$calculatePath$11(OpenApiResource.java:219)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.springdoc.webmvc.api.OpenApiResource.calculatePath(OpenApiResource.java:200)
+	at org.springdoc.webmvc.api.OpenApiResource.lambda$getPaths$2(OpenApiResource.java:170)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.springdoc.webmvc.api.OpenApiResource.getPaths(OpenApiResource.java:149)
+	at org.springdoc.api.AbstractOpenApiResource.getOpenApi(AbstractOpenApiResource.java:350)
+	at org.springdoc.webmvc.api.OpenApiResource.openapiJson(OpenApiResource.java:124)
+	at org.springdoc.webmvc.api.OpenApiWebMvcResource.openapiJson(OpenApiWebMvcResource.java:111)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1775)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-04-06 21:17:15.625 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:17:15.629 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:17:21.941 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:17:21.979 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 184708 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:17:21.979 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:17:22.820 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:17:22.828 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:17:22.829 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:17:22.829 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:17:22.865 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:17:22.865 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 849 ms
+2026-04-06 21:17:23.236 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7d106c16-f0d5-4162-8219-2f6603136f29
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:17:23.240 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:17:23.440 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:17:23.451 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:17:23.456 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.762 seconds (process running for 2.351)
+2026-04-06 21:17:29.268 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:17:29.270 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:17:29.270 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-06 21:17:29.753 [http-nio-8080-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed: java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)'] with root cause
+java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>(java.lang.Object)'
+	at org.springdoc.core.service.GenericResponseService.lambda$getGenericMapResponse$8(GenericResponseService.java:706)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:575)
+	at java.base/java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:260)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
+	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:622)
+	at java.base/java.util.stream.ReferencePipeline.toList(ReferencePipeline.java:627)
+	at org.springdoc.core.service.GenericResponseService.getGenericMapResponse(GenericResponseService.java:708)
+	at org.springdoc.core.service.GenericResponseService.build(GenericResponseService.java:247)
+	at org.springdoc.api.AbstractOpenApiResource.calculatePath(AbstractOpenApiResource.java:499)
+	at org.springdoc.api.AbstractOpenApiResource.calculatePath(AbstractOpenApiResource.java:676)
+	at org.springdoc.webmvc.api.OpenApiResource.lambda$calculatePath$11(OpenApiResource.java:220)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.springdoc.webmvc.api.OpenApiResource.calculatePath(OpenApiResource.java:201)
+	at org.springdoc.webmvc.api.OpenApiResource.lambda$getPaths$2(OpenApiResource.java:171)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at org.springdoc.webmvc.api.OpenApiResource.getPaths(OpenApiResource.java:150)
+	at org.springdoc.api.AbstractOpenApiResource.getOpenApi(AbstractOpenApiResource.java:353)
+	at org.springdoc.webmvc.api.OpenApiResource.openapiJson(OpenApiResource.java:125)
+	at org.springdoc.webmvc.api.OpenApiWebMvcResource.openapiJson(OpenApiWebMvcResource.java:114)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:125)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1775)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-04-06 21:19:48.068 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:19:48.073 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:19:54.164 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:19:54.196 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 187812 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:19:54.196 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:19:55.098 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:19:55.105 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:19:55.107 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:19:55.107 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:19:55.143 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:19:55.143 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 907 ms
+2026-04-06 21:19:55.545 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5619656b-5e78-4105-a0c7-2f7529ee3824
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:19:55.550 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:19:55.768 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:19:55.780 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:19:55.786 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.9 seconds (process running for 2.547)
+2026-04-06 21:20:01.319 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:20:01.319 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:20:01.319 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-06 21:20:01.921 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 338 ms
+2026-04-06 21:20:58.021 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:20:58.425 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dc5a1d2
+2026-04-06 21:20:58.427 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 21:20:58.708 [http-nio-8080-exec-10] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,email,phone,password,avatar,create_time,update_time,role,status  FROM user      WHERE  (email = ? OR phone = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []
+2026-04-06 21:21:16.021 [http-nio-8080-exec-4] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,email,phone,password,avatar,create_time,update_time,role,status  FROM user      WHERE  (email = ? OR phone = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []
+2026-04-06 21:21:17.727 [http-nio-8080-exec-6] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,email,phone,password,avatar,create_time,update_time,role,status  FROM user      WHERE  (email = ? OR phone = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []
+2026-04-06 21:22:01.399 [http-nio-8080-exec-8] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,email,phone,password,avatar,create_time,update_time,role,status  FROM user      WHERE  (email = ? OR phone = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []
+2026-04-06 21:22:04.434 [http-nio-8080-exec-7] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,email,phone,password,avatar,create_time,update_time,role,status  FROM user      WHERE  (email = ? OR phone = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []
+2026-04-06 21:29:48.357 [http-nio-8080-exec-4] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT  id,username,email,phone,password,avatar,create_time,update_time,role,status  FROM user      WHERE  (email = ? OR phone = ?)
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'username' in 'field list'
+; bad SQL grammar []
+2026-04-06 21:33:06.389 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:33:06.508 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:33:06.908 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:33:06.940 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 188872 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:33:06.940 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:33:09.385 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fb6d439c-f72a-4c6c-9df6-54755fbc0e3e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:33:09.401 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:33:10.237 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.587 seconds (process running for 4.75)
+2026-04-06 21:34:14.748 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:34:14.859 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:34:15.226 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:34:15.254 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 176692 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:34:15.256 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:34:17.664 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0ceee0a4-b3b4-45bc-bde8-93e2951fb510
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:34:17.678 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:34:18.560 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.592 seconds (process running for 4.783)
+2026-04-06 21:34:19.187 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:35:36.124 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:35:36.248 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:35:36.618 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:35:36.641 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 163276 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:35:36.642 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:35:39.003 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5391bbab-3fdd-44cb-af73-0d80f909b49f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:35:39.021 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:35:39.865 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.514 seconds (process running for 4.716)
+2026-04-06 21:35:40.474 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:38:01.196 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:38:01.204 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:38:01.209 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 21:38:01.215 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 21:38:02.908 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:38:02.938 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 181892 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:38:02.940 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:38:03.778 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:38:03.785 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:38:03.786 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:38:03.786 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:38:03.823 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:38:03.823 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 843 ms
+2026-04-06 21:38:04.221 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9592dac7-942d-44d1-8faa-e13cdc2a1bdc
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:38:04.226 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:38:04.444 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:38:04.457 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:38:04.462 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.824 seconds (process running for 2.47)
+2026-04-06 21:38:16.105 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:38:16.105 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:38:16.105 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-06 21:38:16.364 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:38:17.772 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve com.gdut.mapper.UserMapper.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2026-04-06 21:38:34.316 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:38:34.321 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:38:39.486 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:38:39.602 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:38:39.955 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:38:39.979 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 179304 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:38:39.981 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:38:42.521 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: db6cee8b-fd48-45c0-b0c8-db0c2b3e2c40
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:38:42.540 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:38:43.513 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.807 seconds (process running for 4.955)
+2026-04-06 21:38:44.124 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:39:33.400 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:39:33.514 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:39:33.885 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:39:33.908 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 173608 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:39:33.909 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:39:36.479 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ff6d86b6-3e0e-40f8-aa58-00394be1f961
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:39:36.495 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:39:37.386 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.761 seconds (process running for 4.904)
+2026-04-06 21:39:37.948 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:39:38.352 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b76ecd5
+2026-04-06 21:39:38.353 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 21:39:38.409 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 21:39:38.415 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 21:41:12.402 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:41:12.518 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:41:12.870 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:41:12.900 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 153404 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:41:12.902 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:41:15.503 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: df1f5303-9c4c-4273-bcbc-5f0b622521d4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:41:15.519 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:41:16.390 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.768 seconds (process running for 4.899)
+2026-04-06 21:41:17.022 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:41:17.377 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6520625f
+2026-04-06 21:41:17.380 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 21:41:17.451 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 21:41:17.460 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 21:41:19.267 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:41:19.302 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 178840 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:41:19.302 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:41:20.143 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:41:20.151 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:41:20.151 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:41:20.151 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:41:20.189 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:41:20.189 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 847 ms
+2026-04-06 21:41:20.609 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 98522432-0b7d-4a19-95f6-2ebf5733d880
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:41:20.613 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:41:20.834 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:41:20.845 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:41:20.852 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.85 seconds (process running for 2.488)
+2026-04-06 21:41:29.120 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:41:29.121 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:41:29.123 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-06 21:41:29.353 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:41:29.697 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ac754cf
+2026-04-06 21:41:29.700 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 21:41:29.741 [http-nio-8080-exec-1] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-04-06 21:41:29.743 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：密码错误
+2026-04-06 21:41:52.670 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:41:52.785 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:41:53.157 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:41:53.182 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 184872 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:41:53.182 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:41:55.877 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f3306f3e-beb9-4d1b-aa6b-c5113017437b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:41:55.894 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:41:56.688 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 3.795 seconds (process running for 5.069)
+2026-04-06 21:41:57.277 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:41:57.586 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b76ecd5
+2026-04-06 21:41:57.587 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 21:41:57.656 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 21:41:57.666 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 21:44:27.560 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:44:27.565 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:44:27.566 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 21:44:27.571 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 21:45:35.791 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:45:35.819 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 187720 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:45:35.819 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:45:36.639 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:45:36.647 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:45:36.648 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:45:36.648 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:45:36.681 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:45:36.681 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 825 ms
+2026-04-06 21:45:37.062 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 73ae56f9-2d06-49d0-ba54-07f5ca11b7ad
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:45:37.067 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:45:37.268 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:45:37.279 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:45:37.285 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 1.752 seconds (process running for 2.332)
+2026-04-06 21:45:42.957 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:45:42.957 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:45:42.959 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-06 21:45:43.215 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:45:44.617 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve com.gdut.mapper.UserMapper.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2026-04-06 21:45:49.583 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:45:49.588 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:46:27.152 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:46:27.212 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 187456 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:46:27.212 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:46:28.311 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 21:46:28.321 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:46:28.321 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 21:46:28.321 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 21:46:28.362 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 21:46:28.362 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1103 ms
+2026-04-06 21:46:28.875 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 444338ec-7df3-4217-bffe-bb2ac319c802
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:46:28.879 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:46:29.128 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 21:46:29.141 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 21:46:29.147 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 2.324 seconds (process running for 3.154)
+2026-04-06 21:46:35.060 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 21:46:35.060 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 21:46:35.062 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-06 21:46:35.333 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:46:36.768 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+### The error may exist in com/gdut/mapper/UserMapper.java (best guess)
+### The error may involve com.gdut.mapper.UserMapper.selectList
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection
+2026-04-06 21:46:43.891 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 21:46:43.898 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 21:47:47.625 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:47:47.792 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:47:48.221 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:47:48.249 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 181728 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:47:48.251 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:47:51.464 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f6eb2a00-a8e4-4212-ab10-0bbdbff10980
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:47:51.483 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:47:52.615 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 4.705 seconds (process running for 6.201)
+2026-04-06 21:47:53.557 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:49:42.901 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:49:43.061 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:49:43.503 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:49:43.531 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 177336 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:49:43.531 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:49:46.870 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: b6067835-9e55-4db1-8fd1-8e8a0cc82a26
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:49:46.891 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:49:48.026 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 4.829 seconds (process running for 6.352)
+2026-04-06 21:49:48.855 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:50:32.361 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:50:32.531 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:50:33.004 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:50:33.033 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 170256 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:50:33.035 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:50:36.442 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6660a679-dcfd-44bb-bcd5-3821f5259e58
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:50:36.463 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:50:37.606 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 4.958 seconds (process running for 6.437)
+2026-04-06 21:50:38.507 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 21:52:22.019 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 21:52:22.184 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 21:52:22.644 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 21:52:22.669 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 181888 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 21:52:22.669 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 21:52:26.552 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 94715bc6-78cd-47b6-a714-fc6fa68c36b0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 21:52:26.573 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 21:52:27.737 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 5.434 seconds (process running for 6.925)
+2026-04-06 21:52:28.576 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:00:10.975 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 22:00:11.148 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 22:00:11.587 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:00:11.612 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 180456 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:00:11.614 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:00:15.383 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 839cf194-e4e4-4df9-a12d-9b9786b9de76
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:00:15.400 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:00:16.629 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 5.368 seconds (process running for 6.881)
+2026-04-06 22:00:17.458 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:00:17.959 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52a2e2fb
+2026-04-06 22:00:17.965 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 22:00:18.072 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 22:00:18.085 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 22:01:14.983 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 22:01:15.144 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 22:01:15.588 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:01:15.615 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 178156 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:01:15.615 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:01:19.456 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7e482476-3ca2-40be-85be-9ac7cdee1ae4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:01:19.476 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:01:20.708 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 5.451 seconds (process running for 6.899)
+2026-04-06 22:01:21.586 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:01:21.982 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79982bcc
+2026-04-06 22:01:21.986 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 22:01:22.148 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 22:01:22.161 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 22:02:12.681 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gdut.FindTheLostApplicationTests]: FineTheLostApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-04-06 22:02:12.831 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gdut.FindTheLostApplication for test class com.gdut.FindTheLostApplicationTests
+2026-04-06 22:02:13.279 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:02:13.324 [main] INFO  c.gdut.FineTheLostApplicationTests - Starting FineTheLostApplicationTests using Java 21.0.10 with PID 184292 (started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:02:13.325 [main] INFO  c.gdut.FineTheLostApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:02:17.921 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d40f1124-74a5-405e-87da-e8c4929bca29
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:02:17.946 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:02:19.301 [main] INFO  c.gdut.FineTheLostApplicationTests - Started FineTheLostApplicationTests in 6.352 seconds (process running for 7.81)
+2026-04-06 22:02:20.154 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:02:20.628 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79982bcc
+2026-04-06 22:02:20.631 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 22:02:20.825 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 22:02:20.901 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 22:02:27.589 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:02:27.622 [main] INFO  com.gdut.FindTheLostApplication - Starting FineTheLostApplication using Java 21.0.10 with PID 184536 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:02:27.623 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:02:28.679 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 22:02:28.687 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:02:28.689 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 22:02:28.689 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 22:02:28.740 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 22:02:28.740 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1079 ms
+2026-04-06 22:02:29.169 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0a4984f9-c08b-4670-a235-e6af2303bc44
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:02:29.172 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:02:29.397 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:02:29.409 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 22:02:29.415 [main] INFO  com.gdut.FindTheLostApplication - Started FineTheLostApplication in 2.115 seconds (process running for 2.774)
+2026-04-06 22:03:07.185 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 22:03:07.193 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 22:04:12.195 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:04:12.230 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 187780 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:04:12.231 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:04:13.263 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 22:04:13.271 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:04:13.273 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 22:04:13.273 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 22:04:13.312 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 22:04:13.312 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1037 ms
+2026-04-06 22:04:13.761 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4475e1c2-ece8-4b1e-abb7-ffd58ecafb84
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:04:13.765 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:04:14.001 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:04:14.041 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-04-06 22:04:14.052 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-06 22:04:14.061 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-04-06 22:04:20.299 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 22:04:20.305 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 22:04:29.895 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:04:29.929 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 177432 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:04:29.931 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:04:30.857 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 22:04:30.864 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:04:30.864 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 22:04:30.864 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 22:04:30.905 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 22:04:30.905 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 935 ms
+2026-04-06 22:04:31.308 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a927b7b6-9019-49e5-94da-625c0c339d41
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:04:31.313 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:04:31.529 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:04:31.540 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 22:04:31.546 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 1.938 seconds (process running for 2.571)
+2026-04-06 22:04:40.167 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 22:04:40.167 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 22:04:40.169 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-06 22:04:40.484 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:04:40.889 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22b4f0fb
+2026-04-06 22:04:40.893 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 22:04:40.980 [http-nio-8080-exec-1] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2026-04-06 22:04:40.983 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：密码错误
+2026-04-06 22:13:05.500 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 22:13:05.506 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 22:13:05.509 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 22:13:05.512 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 22:13:17.130 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:13:17.190 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 189156 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:13:17.190 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:13:18.142 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 22:13:18.149 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:13:18.149 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 22:13:18.149 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 22:13:18.188 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 22:13:18.188 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 954 ms
+2026-04-06 22:13:18.614 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: b62a481f-316d-4659-b52b-80f1ac09b7c2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:13:18.617 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:13:18.839 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:13:18.852 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 22:13:18.857 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.028 seconds (process running for 2.722)
+2026-04-06 22:13:45.073 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 22:13:45.073 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 22:13:45.074 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-06 22:13:45.281 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 参数校验异常：密码长度8-20位
+2026-04-06 22:13:54.125 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:13:54.520 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ef08933
+2026-04-06 22:13:54.523 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 22:21:09.363 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 22:21:09.371 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 22:21:09.374 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 22:21:09.379 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 22:21:14.161 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 22:21:14.195 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 178592 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 22:21:14.196 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 22:21:15.181 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 22:21:15.188 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:21:15.190 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 22:21:15.190 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 22:21:15.231 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 22:21:15.231 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 978 ms
+2026-04-06 22:21:15.655 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: fb209e0a-b676-4972-bb18-53219ecf83e7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 22:21:15.660 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 22:21:15.875 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 22:21:15.886 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 22:21:15.892 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.023 seconds (process running for 2.715)
+2026-04-06 22:22:55.636 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 22:22:55.637 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 22:22:55.637 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-06 22:22:55.944 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 22:22:56.305 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7705f541
+2026-04-06 22:22:56.307 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 22:26:10.192 [http-nio-8080-exec-7] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：密码错误
+2026-04-06 22:27:21.673 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 316 ms
+2026-04-06 22:54:55.354 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 22:54:55.361 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 22:54:55.363 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 22:54:55.366 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 23:47:35.228 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 23:47:35.266 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 180720 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 23:47:35.266 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 23:47:36.343 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 23:47:36.351 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 23:47:36.351 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 23:47:36.351 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 23:47:36.401 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 23:47:36.402 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1088 ms
+2026-04-06 23:47:36.790 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: d09ecd06-20d7-4554-a0e6-0d75fd7c1397
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 23:47:36.800 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 23:47:37.014 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 23:47:37.025 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 23:47:37.032 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.117 seconds (process running for 2.784)
+2026-04-06 23:47:49.565 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 23:47:49.565 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 23:47:49.567 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-06 23:47:49.869 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 23:47:50.232 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52001874
+2026-04-06 23:47:50.237 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 23:50:44.094 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 23:50:44.101 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 23:50:44.105 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 23:50:44.109 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-06 23:50:49.683 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-06 23:50:49.714 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 188552 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-06 23:50:49.714 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-06 23:50:50.724 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-06 23:50:50.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-06 23:50:50.733 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-06 23:50:50.734 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-06 23:50:50.771 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-06 23:50:50.772 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1018 ms
+2026-04-06 23:50:51.193 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: ae9001d4-e5ef-4c35-a685-7733f20b9513
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-06 23:50:51.198 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-06 23:50:51.417 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-06 23:50:51.428 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-06 23:50:51.435 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.047 seconds (process running for 2.731)
+2026-04-06 23:51:22.805 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06 23:51:22.805 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-06 23:51:22.807 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-06 23:51:23.112 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-06 23:51:23.529 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4878b3c5
+2026-04-06 23:51:23.530 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-06 23:51:45.022 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-06 23:51:45.028 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-06 23:51:45.031 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-06 23:51:45.036 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

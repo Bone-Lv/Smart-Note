@@ -9,11 +9,18 @@ import com.gdut.common.enums.NoteVisibility;
 import com.gdut.common.enums.WebSocketMessageType;
 import static com.gdut.common.enums.WebSocketMessageType.*;
 import com.gdut.domain.entity.chat.PrivateMessage;
+import com.gdut.domain.entity.chat.GroupMessage;
+import com.gdut.domain.entity.chat.ChatGroupMember;
 import com.gdut.domain.entity.note.Note;
 import com.gdut.domain.entity.note.NoteFriendPermission;
+import com.gdut.domain.entity.friend.Friend;
+import com.gdut.common.enums.FriendStatus;
 import com.gdut.mapper.NoteFriendPermissionMapper;
 import com.gdut.mapper.NoteMapper;
 import com.gdut.mapper.PrivateMessageMapper;
+import com.gdut.mapper.GroupMessageMapper;
+import com.gdut.mapper.ChatGroupMemberMapper;
+import com.gdut.mapper.FriendMapper;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +31,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -41,6 +49,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     private final PrivateMessageMapper privateMessageMapper;
     private final NoteMapper noteMapper;
     private final NoteFriendPermissionMapper noteFriendPermissionMapper;
+    private final GroupMessageMapper groupMessageMapper;
+    private final ChatGroupMemberMapper chatGroupMemberMapper;
+    private final FriendMapper friendMapper;
 
     // 存储在线用户的WebSocket Session，key为userId
     private static final Map<Long, WebSocketSession> ONLINE_USERS = new ConcurrentHashMap<>();
@@ -70,6 +81,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
             
             // 新增：上线后返回离线消息总数
             pushOfflineMessageCount(userId, session);
+            
+            // 新增：通知好友我上线了
+            notifyFriendsOnlineStatus(userId, true);
         }
     }
 
@@ -106,15 +120,42 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
                     Object messageIdObj = msgMap.get("messageId");
                     Object friendUserIdObj = msgMap.get("friendUserId");
                     Object upToMessageIdObj = msgMap.get("upToMessageId");
-                    
-                    if (upToMessageIdObj != null && friendUserIdObj != null) {
+                    Object groupIdObj = msgMap.get("groupId");
+
+                    boolean success = false;
+                    String responseMessage = "";
+
+                    // 群聊标记已读
+                    if (groupIdObj != null) {
+                        Long groupId = Long.valueOf(groupIdObj.toString());
+                        markGroupMessagesAsRead(userId, groupId);
+                        success = true;
+                        responseMessage = "群聊消息已标记为已读";
+                    }
+                    // 私聊批量标记已读
+                    else if (upToMessageIdObj != null && friendUserIdObj != null) {
                         Long friendUserId = Long.valueOf(friendUserIdObj.toString());
                         Long upToMessageId = Long.valueOf(upToMessageIdObj.toString());
                         markMessagesAsReadBatch(userId, friendUserId, upToMessageId);
-                    } else if (messageIdObj != null) {
+                        success = true;
+                        responseMessage = "私聊消息已批量标记为已读";
+                    }
+                    // 私聊单条标记已读
+                    else if (messageIdObj != null) {
                         Long messageId = Long.valueOf(messageIdObj.toString());
                         markMessageAsRead(messageId, userId);
+                        success = true;
+                        responseMessage = "消息已标记为已读";
+                    } else {
+                        responseMessage = "无效的标记已读请求";
                     }
+                    
+                    // 发送响应给前端
+                    sendMessage(session, Map.of(
+                        "type", "mark_read_ack",
+                        "success", success,
+                        "message", responseMessage
+                    ));
                 }
                 case NOTE_EDIT_REQUEST -> {
                     // 请求获取笔记编辑锁
@@ -158,6 +199,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     public void afterConnectionClosed(WebSocketSession session, @NonNull CloseStatus status) {
         Long userId = (Long) session.getAttributes().get("userId");
         if (userId != null) {
+            // 先通知好友我下线了（在移除之前）
+            notifyFriendsOnlineStatus(userId, false);
+            
             ONLINE_USERS.remove(userId);
             log.info("用户下线：userId={}, 当前在线人数={}", userId, ONLINE_USERS.size());
             
@@ -252,6 +296,31 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
         int updatedCount = privateMessageMapper.update(null, wrapper);
         log.info("用户{}批量标记与好友{}的消息为已读，直到消息ID={}，共更新{}条", 
                  userId, friendUserId, upToMessageId, updatedCount);
+    }
+
+    /**
+     * 标记群聊消息为已读（更新最后已读ID）
+     */
+    private void markGroupMessagesAsRead(Long userId, Long groupId) {
+        // 获取当前群最新的消息ID
+        GroupMessage latestMsg = groupMessageMapper.selectOne(
+                new LambdaQueryWrapper<GroupMessage>()
+                        .eq(GroupMessage::getGroupId, groupId)
+                        .orderByDesc(GroupMessage::getId)
+                        .last("LIMIT 1")
+        );
+
+        if (latestMsg != null) {
+            chatGroupMemberMapper.update(null,
+                    new LambdaUpdateWrapper<ChatGroupMember>()
+                            .eq(ChatGroupMember::getGroupId, groupId)
+                            .eq(ChatGroupMember::getUserId, userId)
+                            .set(ChatGroupMember::getLastReadMsgId, latestMsg.getId())
+            );
+            log.info("用户{}已标记群聊{}的所有消息为已读，最后已读消息ID={}", userId, groupId, latestMsg.getId());
+        } else {
+            log.info("用户{}标记群聊{}为已读，但该群暂无消息", userId, groupId);
+        }
     }
 
     /**
@@ -495,6 +564,44 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
             }
             log.debug("用户{}停止查看笔记{}", userId, noteId);
         }
+    }
+
+    /**
+     * 通知好友在线状态变更
+     * @param userId 当前用户ID
+     * @param isOnline true-上线，false-下线
+     */
+    private void notifyFriendsOnlineStatus(Long userId, boolean isOnline) {
+        // 查询当前用户的所有好友
+        List<Friend> friends = friendMapper.selectList(
+                new LambdaQueryWrapper<Friend>()
+                        .eq(Friend::getUserId, userId)
+                        .eq(Friend::getStatus, FriendStatus.ACCEPTED)
+        );
+        
+        if (friends == null || friends.isEmpty()) {
+            return;
+        }
+        
+        // 构建通知消息
+        String messageType = isOnline ? FRIEND_ONLINE.getValue() : FRIEND_OFFLINE.getValue();
+        Map<String, Object> notification = Map.of(
+                "type", messageType,
+                "friendUserId", userId
+        );
+        
+        // 向所有在线的好友发送通知
+        for (Friend friend : friends) {
+            Long friendUserId = friend.getFriendUserId();
+            WebSocketSession friendSession = ONLINE_USERS.get(friendUserId);
+            
+            if (friendSession != null && friendSession.isOpen()) {
+                sendMessage(friendSession, notification);
+                log.debug("已向好友{}发送{}通知", friendUserId, isOnline ? "上线" : "下线");
+            }
+        }
+        
+        log.info("用户{}{}，已通知{}个在线好友", userId, isOnline ? "上线" : "下线", friends.size());
     }
 
 }

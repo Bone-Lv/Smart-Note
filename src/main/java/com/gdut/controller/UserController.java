@@ -16,6 +16,7 @@ import com.gdut.domain.vo.user.UserVO;
 import com.gdut.service.UserService;
 import com.gdut.service.VerificationCodeService;
 import com.gdut.common.util.UserContext;
+import com.gdut.common.util.ChatWebSocketHandler;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
@@ -36,6 +37,7 @@ public class UserController {
 
     private final UserService userService;
     private final VerificationCodeService verificationCodeService;
+    private final ChatWebSocketHandler chatWebSocketHandler;
 
     @PostMapping("/login")
     @Operation(summary = "用户登录", description = "支持邮箱/手机号+密码登录，校验通过后将Token存入HttpOnly Cookie")
@@ -59,12 +61,29 @@ public class UserController {
         return Result.success(null);
     }
 
+    @GetMapping("/check-auth")
+    @RequireRole
+    @Operation(summary = "检查认证状态", description = "验证用户是否已登录，用于前端路由守卫。如果Token有效返回200，无效返回401")
+    public Result<Map<String, Object>> checkAuth() {
+        Long userId = UserContext.getUserId();
+        log.debug("用户认证状态检查成功：userId={}", userId);
+        return Result.success(Map.of(
+            "authenticated", true,
+            "userId", userId
+        ));
+    }
+
     @GetMapping
     @RequireRole
     @Operation(summary = "查询当前用户信息", description = "根据 Token 自动获取当前登录用户ID并查询个人信息")
     public Result<UserVO> getUserInfo() {
         User user = userService.getById(UserContext.getUserId());
-        return Result.success(BeanUtil.copyProperties(user, UserVO.class));
+        UserVO userVO = BeanUtil.copyProperties(user, UserVO.class);
+        
+        // 设置在线状态（当前用户肯定在线）
+        userVO.setOnlineStatus(1);
+        
+        return Result.success(userVO);
     }
 
     @PutMapping

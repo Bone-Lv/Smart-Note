@@ -32,4 +32,7 @@ public class User {
     private LocalDateTime updateTime;
     // 座右铭
     private String motto;
+    
+    // 在线状态：0-离线，1-在线
+    private Integer onlineStatus = 0;
 }

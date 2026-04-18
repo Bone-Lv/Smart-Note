@@ -1,0 +1,207 @@
+2026-04-08 01:02:40.742 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-08 01:02:40.796 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 7836 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-08 01:02:40.797 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-08 01:02:42.454 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-08 01:02:42.465 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-08 01:02:42.466 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-08 01:02:42.466 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08 01:02:42.511 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-08 01:02:42.511 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1673 ms
+2026-04-08 01:02:43.134 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 39cc7714-2c7a-497e-9902-74eb400ced83
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-08 01:02:43.140 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-08 01:02:43.451 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-08 01:02:43.465 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-08 01:02:43.470 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 3.076 seconds (process running for 4.277)
+2026-04-08 01:02:54.946 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08 01:02:54.947 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-08 01:02:54.948 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-08 01:02:55.065 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.080 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.080 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.080 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.080 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.082 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.228 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 01:02:55.798 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 541 ms
+2026-04-08 01:03:40.366 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08 01:03:40.371 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-08 21:44:52.172 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-08 21:44:52.246 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 29956 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-08 21:44:52.246 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-08 21:44:54.653 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-08 21:44:54.670 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-08 21:44:54.672 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-08 21:44:54.672 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08 21:44:54.745 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-08 21:44:54.745 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2437 ms
+2026-04-08 21:44:55.783 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 88e53ff1-73b4-430d-a86b-f57140f3aa9e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-08 21:44:55.793 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-08 21:44:56.376 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-08 21:44:56.398 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-08 21:44:56.406 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 4.783 seconds (process running for 6.33)
+2026-04-08 21:45:06.113 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08 21:45:06.113 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-08 21:45:06.114 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-08 21:45:06.153 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.195 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.195 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.195 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.195 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.195 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.336 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-08 21:45:06.919 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 527 ms
+2026-04-08 21:45:16.913 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=zhangsan@example.com, password=12345678)]
+2026-04-08 21:45:16.993 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-08 21:45:17.468 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@299594ca
+2026-04-08 21:45:17.471 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-08 21:45:18.015 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 1102ms
+2026-04-08 21:46:24.148 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:46:24.148 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:46:24.152 [http-nio-8080-exec-6] INFO  com.gdut.util.JwtUtil - 剩余时间: 7132848
+2026-04-08 21:46:24.157 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:46:24.162 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.createNote | 用户: 2 | 参数: [CreateNoteDTO(title=周记, content=第一天, tags=dairy)]
+2026-04-08 21:46:24.240 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.createNote | 耗时: 78ms
+2026-04-08 21:46:38.657 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:46:38.657 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:46:38.657 [http-nio-8080-exec-8] INFO  com.gdut.util.JwtUtil - 剩余时间: 7118343
+2026-04-08 21:46:38.657 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:46:38.657 [http-nio-8080-exec-8] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.getNoteDetail | 用户: 2 | 参数: [1]
+2026-04-08 21:46:38.683 [http-nio-8080-exec-8] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.getNoteDetail | 耗时: 26ms
+2026-04-08 21:47:23.294 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:47:23.294 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:47:23.294 [http-nio-8080-exec-7] INFO  com.gdut.util.JwtUtil - 剩余时间: 7073706
+2026-04-08 21:47:23.294 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:47:23.298 [http-nio-8080-exec-7] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.updateNote | 用户: 2 | 参数: [2, UpdateNoteDTO(title=周记, content=第二天, tags=dairy)]
+2026-04-08 21:47:23.304 [http-nio-8080-exec-7] ERROR com.gdut.aspect.LogAspect - <<< 执行异常: com.gdut.controller.NoteController.updateNote | 耗时: 6ms | 异常: 笔记不存在
+2026-04-08 21:47:23.304 [http-nio-8080-exec-7] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：笔记不存在
+2026-04-08 21:47:29.841 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:47:29.841 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:47:29.842 [http-nio-8080-exec-9] INFO  com.gdut.util.JwtUtil - 剩余时间: 7067158
+2026-04-08 21:47:29.842 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:47:29.842 [http-nio-8080-exec-9] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.updateNote | 用户: 2 | 参数: [1, UpdateNoteDTO(title=周记, content=第二天, tags=dairy)]
+2026-04-08 21:47:29.871 [http-nio-8080-exec-9] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.updateNote | 耗时: 29ms
+2026-04-08 21:47:34.262 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:47:34.263 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:47:34.264 [http-nio-8080-exec-10] INFO  com.gdut.util.JwtUtil - 剩余时间: 7062736
+2026-04-08 21:47:34.264 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:47:34.264 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.getNoteDetail | 用户: 2 | 参数: [1]
+2026-04-08 21:47:34.277 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.getNoteDetail | 耗时: 13ms
+2026-04-08 21:47:56.981 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:47:56.981 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:47:56.981 [http-nio-8080-exec-5] INFO  com.gdut.util.JwtUtil - 剩余时间: 7040019
+2026-04-08 21:47:56.981 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:47:56.987 [http-nio-8080-exec-5] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:47:58.233 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:47:58.234 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:47:58.234 [http-nio-8080-exec-4] INFO  com.gdut.util.JwtUtil - 剩余时间: 7038766
+2026-04-08 21:47:58.235 [http-nio-8080-exec-4] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:47:58.236 [http-nio-8080-exec-4] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:48:17.421 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:48:17.422 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:48:17.422 [http-nio-8080-exec-3] INFO  com.gdut.util.JwtUtil - 剩余时间: 7019578
+2026-04-08 21:48:17.423 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:48:17.425 [http-nio-8080-exec-3] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:48:21.060 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:48:21.060 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:48:21.060 [http-nio-8080-exec-1] INFO  com.gdut.util.JwtUtil - 剩余时间: 7015940
+2026-04-08 21:48:21.060 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:48:21.063 [http-nio-8080-exec-1] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:48:37.627 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:48:37.627 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:48:37.628 [http-nio-8080-exec-2] INFO  com.gdut.util.JwtUtil - 剩余时间: 6999372
+2026-04-08 21:48:37.628 [http-nio-8080-exec-2] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:48:37.628 [http-nio-8080-exec-2] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:48:59.219 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:48:59.219 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:48:59.220 [http-nio-8080-exec-6] INFO  com.gdut.util.JwtUtil - 剩余时间: 6977780
+2026-04-08 21:48:59.220 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:48:59.220 [http-nio-8080-exec-6] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:49:08.813 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:49:08.814 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:49:08.815 [http-nio-8080-exec-8] INFO  com.gdut.util.JwtUtil - 剩余时间: 6968185
+2026-04-08 21:49:08.816 [http-nio-8080-exec-8] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:49:08.816 [http-nio-8080-exec-8] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:52:44.566 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:52:44.566 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:52:44.566 [http-nio-8080-exec-9] INFO  com.gdut.util.JwtUtil - 剩余时间: 6752434
+2026-04-08 21:52:44.566 [http-nio-8080-exec-9] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:52:44.568 [http-nio-8080-exec-9] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:52:57.991 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:52:57.992 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:52:57.992 [http-nio-8080-exec-10] INFO  com.gdut.util.JwtUtil - 剩余时间: 6739008
+2026-04-08 21:52:57.992 [http-nio-8080-exec-10] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:52:57.992 [http-nio-8080-exec-10] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'com.gdut.enums.NoteVisibility'. Check configuration for 'visibility'
+2026-04-08 21:55:49.695 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08 21:55:49.701 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-08 21:55:49.706 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-08 21:55:49.711 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-08 21:55:53.298 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-08 21:55:53.329 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 34348 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-08 21:55:53.331 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-08 21:55:54.268 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-08 21:55:54.275 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-08 21:55:54.276 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-08 21:55:54.276 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-08 21:55:54.327 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-08 21:55:54.327 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 965 ms
+2026-04-08 21:55:54.797 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0286804d-b3de-4a09-931e-50f7263a3df9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-08 21:55:54.801 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-08 21:55:55.036 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-08 21:55:55.048 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-08 21:55:55.053 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.014 seconds (process running for 2.563)
+2026-04-08 21:56:10.117 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-08 21:56:10.117 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-08 21:56:10.119 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-08 21:56:10.155 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:56:10.156 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:56:10.454 [http-nio-8080-exec-1] INFO  com.gdut.util.JwtUtil - 剩余时间: 6546546
+2026-04-08 21:56:10.456 [http-nio-8080-exec-1] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:56:10.572 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.updateVisibility | 用户: 2 | 参数: [1, UpdateVisibilityDTO(visibility=FRIENDS_VIEW, friendUserIds=[3])]
+2026-04-08 21:56:10.576 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-08 21:56:10.902 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2503de7b
+2026-04-08 21:56:10.902 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-08 21:56:11.110 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.updateVisibility | 耗时: 538ms
+2026-04-08 21:56:31.601 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:56:31.601 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:56:31.601 [http-nio-8080-exec-7] INFO  com.gdut.util.JwtUtil - 剩余时间: 6525399
+2026-04-08 21:56:31.601 [http-nio-8080-exec-7] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:56:31.601 [http-nio-8080-exec-7] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.generateShareInfo | 用户: 2 | 参数: [3]
+2026-04-08 21:56:31.607 [http-nio-8080-exec-7] ERROR com.gdut.aspect.LogAspect - <<< 执行异常: com.gdut.controller.NoteController.generateShareInfo | 耗时: 6ms | 异常: 笔记不存在
+2026-04-08 21:56:31.607 [http-nio-8080-exec-7] ERROR c.g.exception.GlobalExceptionHandler - 业务异常：笔记不存在
+2026-04-08 21:56:52.333 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:56:52.333 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:56:52.333 [http-nio-8080-exec-3] INFO  com.gdut.util.JwtUtil - 剩余时间: 6504667
+2026-04-08 21:56:52.333 [http-nio-8080-exec-3] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:56:52.333 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.generateShareInfo | 用户: 2 | 参数: [1]
+2026-04-08 21:56:52.337 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.generateShareInfo | 耗时: 4ms
+2026-04-08 21:58:52.331 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:58:52.331 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:58:52.332 [http-nio-8080-exec-5] INFO  com.gdut.util.JwtUtil - 剩余时间: 6384668
+2026-04-08 21:58:52.332 [http-nio-8080-exec-5] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:58:52.332 [http-nio-8080-exec-5] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.getRecentViewedNotes | 用户: 2 | 参数: [10]
+2026-04-08 21:58:52.389 [http-nio-8080-exec-5] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.getRecentViewedNotes | 耗时: 57ms
+2026-04-08 21:59:26.834 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-08 21:59:26.834 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NjYzMTE3LCJpYXQiOjE3NzU2NTU5MTd9.TM9-C3JfKzm8jflvV4M_U3bhVHUeaVOZIR7mKzximl4
+2026-04-08 21:59:26.834 [http-nio-8080-exec-6] INFO  com.gdut.util.JwtUtil - 剩余时间: 6350166
+2026-04-08 21:59:26.834 [http-nio-8080-exec-6] INFO  c.gdut.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-08 21:59:26.894 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.getNoteList | 用户: 2 | 参数: [NoteQueryDTO(page=1, pageSize=10, keyword=周, sortOrder=time)]
+2026-04-08 21:59:26.978 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.getNoteList | 耗时: 84ms
+2026-04-08 21:59:46.626 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-08 21:59:46.632 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-08 21:59:46.636 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-08 21:59:46.639 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

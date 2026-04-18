@@ -35,6 +35,7 @@ import reactor.core.publisher.Flux;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -327,6 +328,9 @@ public class AIChatServiceImpl extends ServiceImpl<ChatHistoryMapper, ChatHistor
         List<ChatMessageVO> voList = histories.stream()
                 .map(history -> BeanUtil.copyProperties(history, ChatMessageVO.class))
                 .collect(Collectors.toList());
+        
+        // ✅ 重要：反转列表，使消息从旧到新排列（符合聊天界面习惯）
+        Collections.reverse(voList);
         
         // 返回专门的游标分页结果
         return CursorPageResult.<ChatMessageVO>builder()

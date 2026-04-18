@@ -18,7 +18,9 @@ import com.gdut.mapper.FriendMapper;
 import com.gdut.mapper.FriendGroupMapper;
 import com.gdut.mapper.UserMapper;
 import com.gdut.service.FriendService;
+import com.gdut.common.util.ChatWebSocketHandler;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,12 +30,14 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> implements FriendService {
 
     private final FriendGroupMapper friendGroupMapper;
     private final UserMapper userMapper;
+    private final ChatWebSocketHandler chatWebSocketHandler;
 
     @Override
     public UserPublicVO searchUserByAccount(String account) {
@@ -49,7 +53,12 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
         }
         
         // 使用 Hutool 工具类进行属性复制，自动忽略目标类中不存在的字段（如邮箱、手机号）
-        return BeanUtil.copyProperties(user, UserPublicVO.class);
+        UserPublicVO vo = BeanUtil.copyProperties(user, UserPublicVO.class);
+        
+        // 设置在线状态
+        vo.setOnlineStatus(chatWebSocketHandler.isUserOnline(user.getId()) ? 1 : 0);
+        
+        return vo;
     }
 
     @Override
@@ -144,6 +153,8 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
             if (applicant != null) {
                 vo.setApplicantUsername(applicant.getUsername());
                 vo.setApplicantAvatar(applicant.getAvatar());
+                // 设置申请人在线状态
+                vo.setApplicantOnlineStatus(chatWebSocketHandler.isUserOnline(applicant.getId()) ? 1 : 0);
             }
             
             return vo;
@@ -262,6 +273,9 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
                 vo.setFriendMotto(friendUser.getMotto());
             }
             
+            // 设置在线状态
+            vo.setIsOnline(chatWebSocketHandler.isUserOnline(f.getFriendUserId()));
+            
             if (f.getGroupId() != null) {
                 FriendGroup group = groupMap.get(f.getGroupId());
                 if (group != null) {
@@ -306,7 +320,7 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void createFriendGroup(Long userId, String groupName) {
+    public Long createFriendGroup(Long userId, String groupName) {
         // 检查分组名是否重复
         long count = friendGroupMapper.selectCount(
                 new LambdaQueryWrapper<FriendGroup>()
@@ -333,6 +347,8 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
         group.setGroupName(groupName);
         group.setSortOrder(sortOrder);
         friendGroupMapper.insert(group);
+        
+        return group.getId();  // MyBatis-Plus 会自动回填雪花 ID
     }
 
     @Override
@@ -357,6 +373,34 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
         
         // 删除分组
         friendGroupMapper.deleteById(groupId);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void renameFriendGroup(Long userId, Long groupId, String groupName) {
+        FriendGroup group = friendGroupMapper.selectById(groupId);
+        if (group == null) {
+            throw new BusinessException(ResultCode.FRIEND_GROUP_NOT_EXIST);
+        }
+        
+        if (!group.getUserId().equals(userId)) {
+            throw new BusinessException(ResultCode.FORBIDDEN, "无权修改该分组");
+        }
+        
+        // 检查新名称是否与其他分组重复
+        long count = friendGroupMapper.selectCount(
+                new LambdaQueryWrapper<FriendGroup>()
+                        .eq(FriendGroup::getUserId, userId)
+                        .eq(FriendGroup::getGroupName, groupName)
+                        .ne(FriendGroup::getId, groupId)
+        );
+        
+        if (count > 0) {
+            throw new BusinessException(ResultCode.BAD_REQUEST, "分组名称已存在");
+        }
+        
+        group.setGroupName(groupName);
+        friendGroupMapper.updateById(group);
     }
 
     @Override
@@ -390,16 +434,23 @@ public class FriendServiceImpl extends ServiceImpl<FriendMapper, Friend> impleme
         }
         
         // 如果指定了分组，校验分组是否存在且属于当前用户
-        if (dto.getGroupId() != null) {
-            FriendGroup group = friendGroupMapper.selectById(dto.getGroupId());
+        Long targetGroupId = dto.getGroupId();
+        if (targetGroupId != null) {
+            FriendGroup group = friendGroupMapper.selectById(targetGroupId);
             if (group == null || !group.getUserId().equals(userId)) {
-                throw new BusinessException(ResultCode.FRIEND_GROUP_NOT_EXIST);
+                // ✅ 优化：如果分组不存在，自动使用默认分组而不是报错
+                log.warn("分组ID {} 不存在，自动使用默认分组", targetGroupId);
+                targetGroupId = getDefaultGroupId(userId);
             }
+        } else {
+            // 如果没传 groupId，也使用默认分组
+            targetGroupId = getDefaultGroupId(userId);
         }
+        
         // 更新好友分组
         lambdaUpdate()
                 .eq(Friend::getId, friend.getId())
-                .set(Friend::getGroupId, dto.getGroupId())
+                .set(Friend::getGroupId, targetGroupId)
                 .update();
     }
 

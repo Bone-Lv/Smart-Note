@@ -1,0 +1,449 @@
+2026-04-10 00:19:06.273 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-10 00:19:06.313 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 31240 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-10 00:19:06.314 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-10 00:19:07.815 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-10 00:19:07.822 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-10 00:19:07.853 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-10 00:19:07.854 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-10 00:19:07.891 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-10 00:19:07.891 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1550 ms
+2026-04-10 00:19:08.363 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\NoteController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'noteServiceImpl' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\NoteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+2026-04-10 00:19:08.365 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-10 00:19:08.373 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-10 00:19:08.383 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\NoteController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'noteServiceImpl' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\NoteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteServiceImpl' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\NoteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 62 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.util.Assert.hasText(Assert.java:253)
+	at com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeConnectionUtils.resolveConnectionProperties(DashScopeConnectionUtils.java:65)
+	at com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeChatAutoConfiguration.dashscopeChatApi(DashScopeChatAutoConfiguration.java:125)
+	at com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeChatAutoConfiguration.dashScopeChatModel(DashScopeChatAutoConfiguration.java:92)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172)
+	... 65 common frames omitted
+2026-04-10 00:19:56.158 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-10 00:19:56.190 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 4932 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-10 00:19:56.190 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-10 00:19:57.428 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-10 00:19:57.435 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-10 00:19:57.436 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-10 00:19:57.436 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-10 00:19:57.476 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-10 00:19:57.476 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1251 ms
+2026-04-10 00:19:57.977 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\NoteController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'noteServiceImpl' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\NoteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+2026-04-10 00:19:57.979 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-04-10 00:19:57.987 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-10 00:19:57.996 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteController' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\controller\NoteController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'noteServiceImpl' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\NoteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'noteServiceImpl' defined in file [D:\code\java\java\Fine_the_lost\target\classes\com\gdut\service\impl\NoteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'chatClient' defined in class path resource [com/gdut/common/config/AIConfig.class]: Unsatisfied dependency expressed through method 'chatClient' parameter 0: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dashScopeChatModel' defined in class path resource [com/alibaba/cloud/ai/autoconfigure/dashscope/DashScopeChatAutoConfiguration.class]: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 48 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel]: Factory method 'dashScopeChatModel' threw exception with message: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 62 common frames omitted
+Caused by: java.lang.IllegalArgumentException: DashScope API key must be set. Use the connection property: spring.ai.dashscope.api-key or spring.ai.dashscope.chat.api-key property.
+	at org.springframework.util.Assert.hasText(Assert.java:253)
+	at com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeConnectionUtils.resolveConnectionProperties(DashScopeConnectionUtils.java:65)
+	at com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeChatAutoConfiguration.dashscopeChatApi(DashScopeChatAutoConfiguration.java:125)
+	at com.alibaba.cloud.ai.autoconfigure.dashscope.DashScopeChatAutoConfiguration.dashScopeChatModel(DashScopeChatAutoConfiguration.java:92)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172)
+	... 65 common frames omitted
+2026-04-10 00:21:23.489 [main] ERROR o.s.boot.SpringApplication - Application run failed
+while constructing a mapping
+ in 'reader', line 3, column 1:
+    spring:
+    ^
+found duplicate key spring
+ in 'reader', line 52, column 1:
+    spring:
+    ^
+
+	at org.yaml.snakeyaml.constructor.SafeConstructor.processDuplicateKeys(SafeConstructor.java:119)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.flattenMapping(SafeConstructor.java:71)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.flattenMapping(SafeConstructor.java:66)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:553)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:592)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:265)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:248)
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.constructObject(OriginTrackedYamlLoader.java:119)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:202)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:167)
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.getData(OriginTrackedYamlLoader.java:99)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:530)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:203)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:169)
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:54)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:36)
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:96)
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:132)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:87)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:129)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:251)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:238)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:96)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:89)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:134)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:117)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:10)
+2026-04-10 00:21:31.700 [main] ERROR o.s.boot.SpringApplication - Application run failed
+while constructing a mapping
+ in 'reader', line 3, column 1:
+    spring:
+    ^
+found duplicate key spring
+ in 'reader', line 52, column 1:
+    spring:
+    ^
+
+	at org.yaml.snakeyaml.constructor.SafeConstructor.processDuplicateKeys(SafeConstructor.java:119)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.flattenMapping(SafeConstructor.java:71)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.flattenMapping(SafeConstructor.java:66)
+	at org.yaml.snakeyaml.constructor.SafeConstructor.constructMapping2ndStep(SafeConstructor.java:204)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructMapping(BaseConstructor.java:553)
+	at org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap.construct(SafeConstructor.java:592)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObjectNoCheck(BaseConstructor.java:265)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructObject(BaseConstructor.java:248)
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.constructObject(OriginTrackedYamlLoader.java:119)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.constructDocument(BaseConstructor.java:202)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:167)
+	at org.springframework.boot.env.OriginTrackedYamlLoader$OriginTrackingConstructor.getData(OriginTrackedYamlLoader.java:99)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:530)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:203)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:169)
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:84)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:54)
+	at org.springframework.boot.context.config.StandardConfigDataLoader.load(StandardConfigDataLoader.java:36)
+	at org.springframework.boot.context.config.ConfigDataLoaders.load(ConfigDataLoaders.java:96)
+	at org.springframework.boot.context.config.ConfigDataImporter.load(ConfigDataImporter.java:132)
+	at org.springframework.boot.context.config.ConfigDataImporter.resolveAndLoad(ConfigDataImporter.java:87)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentContributors.withProcessedImports(ConfigDataEnvironmentContributors.java:129)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processInitial(ConfigDataEnvironment.java:251)
+	at org.springframework.boot.context.config.ConfigDataEnvironment.processAndApply(ConfigDataEnvironment.java:238)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:96)
+	at org.springframework.boot.context.config.ConfigDataEnvironmentPostProcessor.postProcessEnvironment(ConfigDataEnvironmentPostProcessor.java:89)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEnvironmentPreparedEvent(EnvironmentPostProcessorApplicationListener.java:134)
+	at org.springframework.boot.env.EnvironmentPostProcessorApplicationListener.onApplicationEvent(EnvironmentPostProcessorApplicationListener.java:117)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.gdut.FindTheLostApplication.main(FindTheLostApplication.java:10)
+2026-04-10 00:22:54.967 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-10 00:22:55.005 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 24080 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-10 00:22:55.006 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-10 00:22:56.172 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-10 00:22:56.180 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-10 00:22:56.181 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-10 00:22:56.181 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-10 00:22:56.218 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-10 00:22:56.218 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1174 ms
+2026-04-10 00:22:56.995 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 9a4565f7-4798-4dd2-a037-2adbb6bff7ed
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-10 00:22:57.000 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-10 00:22:57.394 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-10 00:22:57.400 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-10 00:22:57.407 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 2.707 seconds (process running for 3.292)
+2026-04-10 00:23:09.392 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-10 00:23:09.392 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-10 00:23:09.392 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-10 00:23:09.428 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:09.460 [http-nio-8080-exec-6] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:09.460 [http-nio-8080-exec-3] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:09.460 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:09.460 [http-nio-8080-exec-5] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:09.461 [http-nio-8080-exec-2] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:09.576 [http-nio-8080-exec-8] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 00:23:10.306 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 673 ms
+2026-04-10 00:23:14.755 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=zhangsan@example.com, password=12345678)]
+2026-04-10 00:23:14.822 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-10 00:23:15.118 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46cfcac6
+2026-04-10 00:23:15.121 [http-nio-8080-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-10 00:23:15.604 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 849ms
+2026-04-10 00:23:38.416 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 00:23:38.417 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1NzU4OTk1LCJpYXQiOjE3NzU3NTE3OTV9.n2_2LQ8oIsKpb6BKXUWxhoS5ysyPTrqHRs0o9Y0TGTI
+2026-04-10 00:23:38.424 [http-nio-8080-exec-1] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7176576
+2026-04-10 00:23:38.424 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-10 00:23:38.427 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.NoteController.analyzeNote | 用户: 2 | 参数: [1, AiAnalysisDTO(noteId=0, forceRefresh=false)]
+2026-04-10 00:23:40.908 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.NoteController.analyzeNote | 耗时: 2481ms
+2026-04-10 00:24:12.973 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-10 00:24:12.980 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-10 00:24:12.984 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-10 00:24:12.988 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-04-10 15:45:02.235 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-04-10 15:45:02.276 [main] INFO  com.gdut.FindTheLostApplication - Starting FindTheLostApplication using Java 21.0.10 with PID 13676 (D:\code\java\java\Fine_the_lost\target\classes started by Bone in D:\code\java\java\Fine_the_lost)
+2026-04-10 15:45:02.276 [main] INFO  com.gdut.FindTheLostApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-10 15:45:03.786 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-10 15:45:03.794 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-10 15:45:03.795 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-10 15:45:03.795 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-04-10 15:45:03.838 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-04-10 15:45:03.838 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1528 ms
+2026-04-10 15:45:04.698 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 23936aa3-6047-445c-b404-6340d4f59221
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-04-10 15:45:04.703 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-10 15:45:05.072 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-04-10 15:45:05.079 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-10 15:45:05.085 [main] INFO  com.gdut.FindTheLostApplication - Started FindTheLostApplication in 3.149 seconds (process running for 4.374)
+2026-04-10 15:45:17.602 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-10 15:45:17.602 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-10 15:45:17.602 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-04-10 15:45:17.644 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:17.692 [http-nio-8080-exec-5] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:17.692 [http-nio-8080-exec-2] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:17.692 [http-nio-8080-exec-7] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:17.692 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:17.693 [http-nio-8080-exec-6] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:17.816 [http-nio-8080-exec-9] INFO  c.g.c.interceptor.TokenInterceptor - 当前访问不是 Controller 方法，直接放行
+2026-04-10 15:45:18.517 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 637 ms
+2026-04-10 15:45:31.377 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=zhangsan@example.com, password=12345678)]
+2026-04-10 15:45:31.445 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-04-10 15:45:31.764 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7df1c671
+2026-04-10 15:45:31.765 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-04-10 15:45:32.271 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 892ms
+2026-04-10 15:46:23.600 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:46:23.600 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1ODE0MzMxLCJpYXQiOjE3NzU4MDcxMzF9.T_Y1vUgYakG283wbamm9qKI-DbDD3keKZTsJ9O9GATU
+2026-04-10 15:46:23.602 [http-nio-8080-exec-4] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7147398
+2026-04-10 15:46:23.608 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-10 15:46:23.612 [http-nio-8080-exec-4] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.sendFriendRequest | 用户: 2 | 参数: [SendFriendRequestDTO(account=19874276108, groupId=0, applyMessage=我是张三)]
+2026-04-10 15:46:23.654 [http-nio-8080-exec-4] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.sendFriendRequest | 耗时: 42ms
+2026-04-10 15:46:53.770 [http-nio-8080-exec-6] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=19874276108, password=12345678)]
+2026-04-10 15:46:53.853 [http-nio-8080-exec-6] ERROR com.gdut.aspect.LogAspect - <<< 执行异常: com.gdut.controller.UserController.login | 耗时: 83ms | 异常: 密码错误
+2026-04-10 15:46:53.853 [http-nio-8080-exec-6] ERROR c.g.c.e.GlobalExceptionHandler - 业务异常：密码错误
+2026-04-10 15:47:02.370 [http-nio-8080-exec-9] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=19874276108, password=87654321)]
+2026-04-10 15:47:02.456 [http-nio-8080-exec-9] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 86ms
+2026-04-10 15:47:31.508 [http-nio-8080-exec-8] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:47:31.508 [http-nio-8080-exec-8] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNzc1ODE0NDIyLCJpYXQiOjE3NzU4MDcyMjJ9.n526Lsj3kNT4zCLAntfO8vPw8GEJbsoUyAU3yk5fLWM
+2026-04-10 15:47:31.509 [http-nio-8080-exec-8] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7170491
+2026-04-10 15:47:31.509 [http-nio-8080-exec-8] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：3
+2026-04-10 15:47:31.509 [http-nio-8080-exec-8] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.getReceivedRequests | 用户: 3 | 参数: []
+2026-04-10 15:47:31.535 [http-nio-8080-exec-8] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.getReceivedRequests | 耗时: 26ms
+2026-04-10 15:47:47.302 [http-nio-8080-exec-10] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:47:47.303 [http-nio-8080-exec-10] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNzc1ODE0NDIyLCJpYXQiOjE3NzU4MDcyMjJ9.n526Lsj3kNT4zCLAntfO8vPw8GEJbsoUyAU3yk5fLWM
+2026-04-10 15:47:47.305 [http-nio-8080-exec-10] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7154695
+2026-04-10 15:47:47.306 [http-nio-8080-exec-10] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：3
+2026-04-10 15:47:47.313 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.handleFriendRequest | 用户: 3 | 参数: [HandleFriendRequestDTO(friendId=1, accept=true)]
+2026-04-10 15:47:47.338 [http-nio-8080-exec-10] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.handleFriendRequest | 耗时: 25ms
+2026-04-10 15:48:02.151 [http-nio-8080-exec-3] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:48:02.151 [http-nio-8080-exec-3] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNzc1ODE0NDIyLCJpYXQiOjE3NzU4MDcyMjJ9.n526Lsj3kNT4zCLAntfO8vPw8GEJbsoUyAU3yk5fLWM
+2026-04-10 15:48:02.153 [http-nio-8080-exec-3] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7139847
+2026-04-10 15:48:02.153 [http-nio-8080-exec-3] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：3
+2026-04-10 15:48:02.154 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.getFriendList | 用户: 3 | 参数: [0]
+2026-04-10 15:48:02.159 [http-nio-8080-exec-3] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.getFriendList | 耗时: 5ms
+2026-04-10 15:48:19.572 [http-nio-8080-exec-5] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:48:19.572 [http-nio-8080-exec-5] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNzc1ODE0NDIyLCJpYXQiOjE3NzU4MDcyMjJ9.n526Lsj3kNT4zCLAntfO8vPw8GEJbsoUyAU3yk5fLWM
+2026-04-10 15:48:19.573 [http-nio-8080-exec-5] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7122427
+2026-04-10 15:48:19.573 [http-nio-8080-exec-5] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：3
+2026-04-10 15:48:19.574 [http-nio-8080-exec-5] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.getFriendList | 用户: 3 | 参数: [1]
+2026-04-10 15:48:19.577 [http-nio-8080-exec-5] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.getFriendList | 耗时: 3ms
+2026-04-10 15:49:30.844 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:49:30.844 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNzc1ODE0NDIyLCJpYXQiOjE3NzU4MDcyMjJ9.n526Lsj3kNT4zCLAntfO8vPw8GEJbsoUyAU3yk5fLWM
+2026-04-10 15:49:30.844 [http-nio-8080-exec-1] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7051156
+2026-04-10 15:49:30.844 [http-nio-8080-exec-1] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：3
+2026-04-10 15:49:30.844 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.getFriendList | 用户: 3 | 参数: [null]
+2026-04-10 15:49:30.854 [http-nio-8080-exec-1] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.getFriendList | 耗时: 10ms
+2026-04-10 15:50:28.084 [http-nio-8080-exec-2] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.UserController.login | 用户: null | 参数: [LoginDTO(account=13729805812, password=12345678)]
+2026-04-10 15:50:28.168 [http-nio-8080-exec-2] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.UserController.login | 耗时: 84ms
+2026-04-10 15:50:45.087 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 当前方法需要登录校验
+2026-04-10 15:50:45.087 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 令牌: eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwiZXhwIjoxNzc1ODE0NjI4LCJpYXQiOjE3NzU4MDc0Mjh9.GHCc2olAXgFDeI7osfed_t1ridpB5lfz6LZXpgj13mI
+2026-04-10 15:50:45.088 [http-nio-8080-exec-4] INFO  com.gdut.common.util.JwtUtil - 剩余时间: 7182912
+2026-04-10 15:50:45.088 [http-nio-8080-exec-4] INFO  c.g.c.interceptor.TokenInterceptor - 用户已登录，ID：2
+2026-04-10 15:50:45.088 [http-nio-8080-exec-4] INFO  com.gdut.aspect.LogAspect - >>> 开始执行: com.gdut.controller.FriendController.getFriendList | 用户: 2 | 参数: [0]
+2026-04-10 15:50:45.096 [http-nio-8080-exec-4] INFO  com.gdut.aspect.LogAspect - <<< 执行成功: com.gdut.controller.FriendController.getFriendList | 耗时: 8ms
+2026-04-10 15:50:53.942 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-10 15:50:53.947 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-10 15:50:53.952 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-04-10 15:50:53.955 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

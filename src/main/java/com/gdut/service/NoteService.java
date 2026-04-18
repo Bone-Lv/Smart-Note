@@ -24,13 +24,28 @@ import java.util.List;
 
 public interface NoteService extends IService<Note> {
     
-    void createNote(Long userId, CreateNoteDTO createNoteDTO);
+    /**
+     * 创建笔记
+     *
+     * @param userId 用户ID
+     * @param createNoteDTO 笔记信息
+     * @return 新建笔记的ID
+     */
+    Long createNote(Long userId, CreateNoteDTO createNoteDTO);
     
     IPage<NoteVO> getNoteList(Long userId, NoteQueryDTO queryDTO);
     
     NoteVO getNoteDetail(Long userId, Long noteId);
     
-    void updateNote(Long userId, Long noteId, UpdateNoteDTO updateNoteDTO);
+    /**
+     * 保存笔记为新版本
+     *
+     * @param userId 用户ID
+     * @param noteId 笔记ID
+     * @param updateNoteDTO 更新信息
+     * @return 新版本号
+     */
+    Integer updateNote(Long userId, Long noteId, UpdateNoteDTO updateNoteDTO);
     
     void deleteNote(Long userId, Long noteId);
     
@@ -162,8 +177,9 @@ public interface NoteService extends IService<Note> {
      * @param userId 用户ID
      * @param noteId 笔记ID
      * @param createAnnotationDTO 批注信息
+     * @return 新建批注的ID
      */
-    void createAnnotation(Long userId, Long noteId, CreateAnnotationDTO createAnnotationDTO);
+    Long createAnnotation(Long userId, Long noteId, CreateAnnotationDTO createAnnotationDTO);
     
     /**
      * 更新笔记批注
@@ -209,4 +225,13 @@ public interface NoteService extends IService<Note> {
      * @param tags 新标签（可选）
      */
     void syncNoteContent(Long userId, Long noteId, String content, String title, String tags);
+    
+    /**
+     * 移动笔记到指定文件夹
+     *
+     * @param userId 用户ID
+     * @param noteId 笔记ID
+     * @param folderId 目标文件夹ID，传null表示移到根目录
+     */
+    void moveNote(Long userId, Long noteId, Long folderId);
 }

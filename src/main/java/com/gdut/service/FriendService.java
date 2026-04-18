@@ -43,13 +43,19 @@ public interface FriendService extends IService<Friend> {
     
     /**
      * 创建好友分组
+     * @return 新建分组的ID
      */
-    void createFriendGroup(Long userId, String groupName);
+    Long createFriendGroup(Long userId, String groupName);
     
     /**
      * 删除好友分组
      */
     void deleteFriendGroup(Long userId, Long groupId);
+    
+    /**
+     * 重命名好友分组
+     */
+    void renameFriendGroup(Long userId, Long groupId, String groupName);
     
     /**
      * 更新好友备注
